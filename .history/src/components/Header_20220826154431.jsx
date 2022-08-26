@@ -4,8 +4,10 @@ const Header = () => {
 
         return(
                 <div 
-                        className="fix c-p"
-
+                        className="fix"
+                        style={{
+                                backgrondColor: 'red'
+                        }}
                 >
                         HeaderHeaderHeaderHeader
                         Header

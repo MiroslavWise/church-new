@@ -4,7 +4,7 @@ const Header = () => {
 
         return(
                 <div 
-                        className="fix c-p"
+                        className="fix cursor-pointer"
 
                 >
                         HeaderHeaderHeaderHeader

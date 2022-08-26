@@ -4,8 +4,8 @@ const Header = () => {
 
         return(
                 <div 
-                        className="fix c-p"
-
+                        className="fix"
+                        
                 >
                         HeaderHeaderHeaderHeader
                         Header

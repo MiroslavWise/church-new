@@ -1,10 +1,12 @@
 import { useNavigate, NavLink } from "react-router-dom"
 
+import {ScrollInfoBottom} from 'assets/func'
+
 const links = [
-        {name: 'О нас', link: '/about'},
-        {name: 'Встречи', link: '/meting'},
-        {name: 'Учение', link: '/teaching'},
-        {name: 'Что-то ещё, будет добавлено', link: '/'},
+        {name: 'О нас', link: 'about'},
+        {name: 'Встречи', link: 'meting'},
+        {name: 'Учение', link: 'teaching'},
+        {name: 'Что-то ещё, будет добавлено', link: ''},
 ]
 
 const Header = () => {
@@ -21,7 +23,7 @@ const Header = () => {
                                 {
                                         links.map(({name, link}, i) => (
                                                 <div className="item-nav-link" key={i}>
-                                                        <div className="c-p text-nav" onClick={()=>{navigate(`${link}`)}}>{name}</div>
+                                                        <div className="c-p text-nav"><ScrollInfoBottom link={link} str={name}/></div>
                                                         {
                                                                 i !== links.length -1
                                                                 &&

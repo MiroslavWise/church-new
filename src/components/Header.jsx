@@ -1,26 +1,26 @@
-import { useNavigate } from "react-router-dom"
+import {useState, useEffect} from 'react'
+import { useNavigate } from 'react-router-dom'
 
-import {SocialMedia} from './SocialMedia'
-import {LinksId} from './LinksId'
+import {SocialMedia} from './module/SocialMedia'
+import {LinksId} from './module/LinksId'
+
+import {ScrollTop} from 'assets/func'
 
 import logo from 'assets/png/bible-quran-64.png'
 
-const links = [
-        {name: 'О нас', link: 'about'},
-        {name: 'Встречи', link: 'meting'},
-        {name: 'Учение', link: 'teaching'},
-        {name: 'Вопросы и ответы', link: 'questions'},
-        {name: 'Мероприятия', link: 'events'},
-        {name: 'Поддержка', link: 'support'},
-        {name: 'Контакты', link: 'contact'},
-]
-
 const Header = () => {
         const navigate = useNavigate()
+        const [scroll, setScroll] = useState(0);
+        const pageY = () => window.pageYOffset
+        window.addEventListener("scroll", ()=>{
+                setScroll(window.scrollY)
+        })
+
+        console.log(scroll)
 
         return(
-                <div className={`header bg-c-prime`}>
-                        <div className="logo-header c-p m-l-8" onClick={()=>{navigate('/')}}>
+                <div className={`header ${scroll ? 'bg-c-prime' : 'bg-c-transparent'}`}>
+                        <div className="logo-header c-p m-l-8" onClick={()=>{navigate('/'); ScrollTop()}}>
                                 <img src={logo} alt="logos" className="main_logo" />
                         </div>
                         <div className="nav-header">

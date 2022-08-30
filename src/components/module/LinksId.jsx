@@ -2,7 +2,7 @@ import {ScrollInfoBottom} from 'assets/func'
 
 const links = [
         {name: 'О нас', link: 'about'},
-        {name: 'Встречи', link: 'meting'},
+        {name: 'Встречи', link: 'meeting'},
         {name: 'Учение', link: 'teaching'},
         {name: 'Вопросы и ответы', link: 'questions'},
         {name: 'Мероприятия', link: 'events'},

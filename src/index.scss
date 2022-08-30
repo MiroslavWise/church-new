@@ -30,6 +30,10 @@ code {
   }
 }
 
+.w-100{
+  width: 100%;
+}
+
 // $cursors: 'pointer', 'default';
 // .cr {
 //     @each $cursor in $cursors {
@@ -90,6 +94,13 @@ code {
 
 .bg-c-prime{
   background-color: $color-prime;
+  height: 65px;
+}
+
+.bg-c-transparent{
+  background-color: transparent;
+  height: 99px;
+  
 }
 
 .bg-c-second{
@@ -97,10 +108,11 @@ code {
 }
 
 .header{
-  height: 65px;
   width: 100%;
   top: 0;
   left: 0;
+  transition: all 0.2s ease-in-out 15ms;
+  border-bottom: 1px solid rgba(#dddddd, 0.2);
   position:fixed;
   @include d-flex-center();
   flex-direction: row;
@@ -171,6 +183,7 @@ code {
 .main_container{
   min-height: calc(100vh - 75px);
   @include d-flex-center();
+  flex-direction: column;
 }
 
 .footer{
@@ -196,3 +209,16 @@ code {
   }
 }
 
+.general{
+  @include d-flex-center();
+  height: calc(100vh - 75px);
+  background-color: plum;
+}
+
+.about{
+  height: 465px;
+}
+
+.meeting{
+  height: 678px;
+}

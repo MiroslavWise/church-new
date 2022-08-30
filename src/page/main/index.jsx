@@ -1,10 +1,16 @@
-
+import {
+        General,
+        About,
+        Meeting
+} from 'components/main'
 
 const Main = () => {
 
         return(
                 <div className="main_container">
-                        asdfsadf 
+                        <General />
+                        <About />
+                        <Meeting />
                 </div>
         )
 }

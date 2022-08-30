@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+const ScrollTop = () => {
+        document.documentElement.scrollTop = 0
+}
+
 const ScrollLink = styled.a`
         background-color: inherit;
         text-decoration: none;
@@ -16,4 +20,4 @@ const Pp10 = styled.a`
 const ScrollInfoBottom = ({str, link}) => <ScrollLink href={`#main-${link}`} id={`t${link}`}>{str}</ScrollLink>
 const ScrollInfoTop = ({str, link}) => <ScrollLink href={`#t${link}`} id={`b${link}`}>{str}</ScrollLink>
 
-export {ScrollLink, Pp10, ScrollInfoBottom, ScrollInfoTop}
+export {ScrollLink, Pp10, ScrollInfoBottom, ScrollInfoTop, ScrollTop}

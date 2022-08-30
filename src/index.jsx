@@ -1,10 +1,26 @@
-import ReactDOM from 'react-dom/client';
-import './index.scss';
-import App from './App';
-import 'aos/dist/aos.css'
-import {BrowserRouter} from "react-router-dom";
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import './index.scss';
+import 'aos/dist/aos.css'
+
+import { Footer } from 'components/Footer'
+import { Header } from 'components/Header'
+import { Main } from 'page'
+import { maps } from 'routes/mapping'
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-    <BrowserRouter><App /></BrowserRouter>
+    <BrowserRouter>
+        <Header />
+            <div className='index-layout'>
+                <Routes>
+                    <Route path="/" element={<Main />} index/>
+                    {
+                        maps
+                    }
+                </Routes>
+            </div>
+        <Footer />
+    </BrowserRouter>
 )

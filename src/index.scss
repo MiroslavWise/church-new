@@ -97,7 +97,7 @@ code {
 }
 
 .header{
-  height: 99px;
+  height: 65px;
   width: 100%;
   top: 0;
   left: 0;
@@ -108,7 +108,12 @@ code {
 }
 
 .logo-header{
+  height: 59px;
+  width: 59px;
+}
 
+.main_logo{
+  height: 59px;
 }
 
 .nav-header{
@@ -139,21 +144,33 @@ code {
     opacity: 0.9;
   }
   to {
-    opacity: 0.6;
+    opacity: 0.5;
   }
 }
 
 .social-header{
+  @include d-flex-center();
+}
 
+.item_social{
+  color: rgba(white, 0.8);
+  &:hover{
+    animation: opac 0.3s ease-in-out;
+    opacity: 0.5;
+  }
 }
 
 .border-vertical{
   border-left: 2px solid gray;
   height: 20px;
 }
-.main-layout{
+.index-layout{
   min-height: calc(100vh - 75px);
+}
 
+.main_container{
+  min-height: calc(100vh - 75px);
+  @include d-flex-center();
 }
 
 .footer{

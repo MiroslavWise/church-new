@@ -1,3 +1,5 @@
+import {SocialMedia} from './SocialMedia'
+
 const Footer = () => {
 
         return(
@@ -7,8 +9,7 @@ const Footer = () => {
                                         © 2022 Церковь Слово Жизни г. Столин
                                 </div>
                                 <div className="footer-social">
-                                        <div>C</div>
-                                        <div>V</div>
+                                        <SocialMedia />
                                 </div>
                         </div>
                 </div>

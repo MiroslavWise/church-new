@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import './index.scss';
+import './style/index.scss';
 import 'aos/dist/aos.css'
 
 import { Footer } from 'components/Footer'

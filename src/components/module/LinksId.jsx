@@ -15,7 +15,7 @@ const LinksId = () => {
         return(
                 links.map(({name, link}, i) => (
                         <div className="item-nav-link" key={i}>
-                                <div className="c-p text-nav"><ScrollInfoBottom link={link} str={name}/></div>
+                                <div className="c-p text-nav"><ScrollInfoBottom link={link} str={name.toUpperCase()}/></div>
                                 {
                                         i !== links.length -1
                                         &&

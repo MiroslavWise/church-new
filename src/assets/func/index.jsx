@@ -7,10 +7,8 @@ const ScrollTop = () => {
 const ScrollLink = styled.a`
         background-color: inherit;
         text-decoration: none;
-        text-style: italic;
-        color: rgba(0,0,0,0.4);
+        color: white;
         padding: 0;
-        cursor: pointer;
 `
 const Pp10 = styled.a`
         background-color: inherit;

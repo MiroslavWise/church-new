@@ -1,3 +1,5 @@
+@import './fonts/font.scss';
+
 $color-prime: #0c8f7f;
 $color-secondary: #3b3d4a;
 
@@ -7,12 +9,14 @@ $color-secondary: #3b3d4a;
   align-items: center;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: 'Cinzel', serif;
-font-family: 'Montserrat', sans-serif;
-font-family: 'Playfair Display', serif;
-font-family: 'Varela', sans-serif;
+  font-family: 'Poppins', serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -33,15 +37,6 @@ code {
 .w-100{
   width: 100%;
 }
-
-// $cursors: 'pointer', 'default';
-// .cr {
-//     @each $cursor in $cursors {
-//         &-#{$cursor} {
-//             cursor: #{$cursor};
-//         }
-//     }
-// }
 
 .c-p{
   cursor: pointer;
@@ -112,7 +107,7 @@ code {
   top: 0;
   left: 0;
   z-index: 999;
-  transition: all 0.2s ease-in-out 5ms;
+  transition: all 0.3s ease-in-out 3ms;
   border-bottom: 1px solid rgba(#dddddd, 0.2);
   position:fixed;
   @include d-flex-center();
@@ -141,9 +136,9 @@ code {
 }
 
 .text-nav{
-  color: rgba(white, 0.8);
-  font-weight: 700;
-  font-size: 18px;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.05em;
   &:hover{
     animation: opac 0.3s ease-in-out;
     opacity: 0.6;
@@ -174,8 +169,8 @@ code {
 }
 
 .border-vertical{
-  border-left: 2px solid gray;
-  height: 20px;
+  border-left: 1.5px solid white;
+  height: 12px;
 }
 .index-layout{
   min-height: calc(100vh - 75px);
@@ -213,7 +208,7 @@ code {
 .general{
   @include d-flex-center();
   height: calc(100vh );
-  background-image: url('./assets/picture/general-back.jpg');
+  background-image: url('../assets/picture/general-back.jpg');
   filter: brightness(55%);
 }
 

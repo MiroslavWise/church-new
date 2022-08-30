@@ -11,7 +11,6 @@ import logo from 'assets/png/bible-quran-64.png'
 const Header = () => {
         const navigate = useNavigate()
         const [scroll, setScroll] = useState(0);
-        const pageY = () => window.pageYOffset
         window.addEventListener("scroll", ()=>{
                 setScroll(window.scrollY)
         })

@@ -140,7 +140,7 @@ code {
   font-size: 12px;
   letter-spacing: 0.05em;
   &:hover{
-    animation: opac 0.3s ease-in-out;
+    animation: opac 0.2s ease-in-out; 
     opacity: 0.6;
   }
 }
@@ -207,9 +207,16 @@ code {
 
 .general{
   @include d-flex-center();
-  height: calc(100vh );
+  height: calc(100vh);
   background-image: url('../assets/picture/general-back.jpg');
   filter: brightness(55%);
+  background-size: 100%;
+  background-position: center;
+  transition: all 10s ease-out 3ms;
+}
+
+.scale{
+  background-size: 140%;
 }
 
 .about{

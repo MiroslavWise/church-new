@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-const General = () => {
+const Greeting = () => {
         const [scale, setScale] = useState(false);
 
         useEffect(() => {
@@ -13,4 +13,4 @@ const General = () => {
         )
 }
 
-export {General}
+export {Greeting}

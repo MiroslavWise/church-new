@@ -1,5 +1,5 @@
 import {
-        General,
+        Greeting,
         About,
         Meeting
 } from 'components/main'
@@ -8,7 +8,7 @@ const Main = () => {
 
         return(
                 <div className="main_container">
-                        <General />
+                        <Greeting />
                         <About />
                         <Meeting />
                 </div>

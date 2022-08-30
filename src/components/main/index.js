@@ -1,9 +1,9 @@
-import { General } from "./General"
+import { Greeting } from "./Greeting"
 import { About } from "./About"
 import { Meeting } from "./Meeting"
 
 export {
-        General,
+        Greeting,
         About,
         Meeting,
 }

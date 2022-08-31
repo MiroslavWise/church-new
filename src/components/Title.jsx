@@ -17,25 +17,25 @@ const Title = ({name}) => {
         )
 }
 
-        function useIsInViewport(ref) {
-                const [isIntersecting, setIsIntersecting] = useState(false);
-        
-                const observer = useMemo(
-                        () =>
-                        new IntersectionObserver(([entry]) =>
-                        setIsIntersecting(entry.isIntersecting),
-                        ),
-                        [],
-                );
-        
-                useEffect(() => {
-                                observer.observe(ref.current);
-                                return () => { observer.disconnect(); };
-                        }, 
-                        [ref, observer]
-                );
+function useIsInViewport(ref) {
+        const [isIntersecting, setIsIntersecting] = useState(false);
 
-                return isIntersecting;
-      }
+        const observer = useMemo(
+                () =>
+                new IntersectionObserver(([entry]) =>
+                setIsIntersecting(entry.isIntersecting),
+                ),
+                [],
+        );
+
+        useEffect(() => {
+                        observer.observe(ref.current);
+                        return () => { observer.disconnect(); };
+                }, 
+                [ref, observer]
+        );
+
+        return isIntersecting;
+}
 
 export {Title}

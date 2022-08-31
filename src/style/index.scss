@@ -8,19 +8,27 @@ $color-secondary: #3b3d4a;
   justify-content: center;
   align-items: center;
 }
-
-h1{
-  font-size: 100px;
+h1, h2, h3, h4, h5, h6, p{
+  color: #535353;
   margin: 0;
+}
+h1{
+  color: #FFFFFF;
+  font-size: 100px;
 }
 h2{
+  color: #FFFFFF;
   font-size: 40px;
-  margin: 0;
 }
 h3{
+  color: #FFFFFF;
   font-size: 25px;
   font-weight: 400;
-  margin: 0;
+}
+h4{
+  font-size: 20px;
+  font-weight: 400;
+  color: #535353;
 }
 
 button{
@@ -28,7 +36,7 @@ button{
 }
 
 html{
-  scroll-padding-top: 66px;
+  scroll-padding-top: 60px;
   --webkit-scroll-behavior: smooth;
 }
 
@@ -291,19 +299,15 @@ code {
 
 .greet-button{
   scale: 0.6;
-  transition: all 1.5s ease-in-out 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
-.greet-title-1{
+.greet-title-0{
   scale: 0.6;
   transition: all 1.5s ease-in-out 0.3s;
-
 }
-.greet-title-2{
-  scale: 0.6;
-  transition: all 1.5s ease-in-out 0.3s;
 
-}
+
 
 .show-opacity {
   opacity: 1;
@@ -314,12 +318,28 @@ code {
 }
 
 .about{
-  height: 400px;
 
+  height: 465px;
 }
 
-.meeting{
-  height: 400px;
+.about-block{
+  @include d-flex-center();
+  flex-direction: column;
+  margin: 50px auto;
+  width: 1160px;
+  .text-p{
+    @include d-flex-center();
+    p{
+      text-align: center;
+    }
+  }
+}
+
+.button-n-hover{
+  &:hover{
+    background-color: #0C8F81;
+    color: #FFFFFF;
+  }
 }
 
 .title {
@@ -349,3 +369,25 @@ code {
   border-bottom-color: #db9327;
   width: 60px !important;
 }
+.meeting{
+  height: 678px;
+}
+
+.title-all-h2{
+  font-size: 42px;
+  overflow: hidden;
+}
+
+.title-bot-line{
+  height: 8px;
+  width: 65px;
+  background-color: #db9327;
+}
+
+.c-black{
+  color: #31333B;
+}
+.c-white{
+  color: #FFFFFF;
+}
+

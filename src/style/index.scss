@@ -358,12 +358,11 @@ code {
 
 .title {
   font-family: 'Poppins';
-  font-size: xx-large;
+  font-size: 2.6em;
   font-weight: 700;
   line-height: 120%;
   text-transform: uppercase;
   text-decoration: none;
-  color: #31333b;
   letter-spacing: -0.5px;
   opacity: 0;
   transform: translateY(20px);
@@ -381,11 +380,13 @@ code {
   padding-top: 0px;
   margin-bottom: 20px;
   border-bottom-color: #db9327;
-  width: 60px !important;
+  width: 4em !important;
 }
 .meeting{
-  height: 678px;
-  background-color: #aaaaaa;
+  background-image: url('../assets/picture/worship-hands.jpg');
+  background-size: 100%;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .title-all-h2{
@@ -406,22 +407,63 @@ code {
   color: #FFFFFF;
 }
 
-// .sunday-service { grid-area: service; }
-// .small-group { grid-area: small; }
-// .pray-service { grid-area: pray; }
-// .youth-meeting { grid-area: youth; }
-// .sunday-school { grid-area: children; }
-// .camp { grid-area: camp; }
-// .other { grid-area: other; }
+.meeting-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 100px;
+  gap: 2em;
+  margin: 2.5em 0.5em;
+}
+.sunday-service {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  background-image: url('../assets/picture/sunday-service.jpg');
+  filter: opacity(65%);
+}
+.box2 {
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+.box3 {
+  grid-column-start: 4;
+  grid-row-start: 1;
+}
+.box4 {
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+.box5 {
+  grid-column-start: 4;
+  grid-row-start: 2;
+}
+.box6 {
+  grid-column-start: 3;
+  grid-row-start: 3;
+}
+.box7 {
+  grid-column-start: 4;
+  grid-row-start: 3;
+}
 
-// .grid-container {
-//   display: grid;
-//   grid-template-areas:
-//     'service service small pray '
-//     'service service youth children'
-//     'service service camp other';
-//   gap: 10px;
-//   background-color: #2196F3;
-//   padding: 10px;
-// }
+.meeting-grid > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 2em 2em;
+
+  .centered {
+    color: #FFFFFF;
+    border: solid 3px #db9327;
+    padding: 1em;
+    font-size: x-large;
+    font-weight: 300 !important;
+    text-align: center;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    letter-spacing: 3px !important;
+    min-width: 199px;
+}
+}
+
 

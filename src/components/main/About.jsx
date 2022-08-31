@@ -12,6 +12,7 @@ const About = () => {
     
                                 <Title className="about-title"
                                         name={'О нас'}
+                                        darkMode={true}
                                 />
                                 <h4 className='p-t-2 m-b-3'>Мы рады, что вы с нами!</h4>
                                 <div className='text-p m-b-5'>

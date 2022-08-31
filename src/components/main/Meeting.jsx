@@ -11,17 +11,23 @@ const Meeting = () => {
                                 <dir className="block-content">
                                         <Title 
                                                 name={'Встречи'}
+                                                darkMode={false}
                                         />
 
-                                        {/* <div class="grid-container">
-                                                <div class="sunday-service">Header</div>
-                                                <div class="small-group">Menu</div>
-                                                <div class="pray-service">Main</div>  
-                                                <div class="youth-meeting">Right</div>
-                                                <div class="sunday-school">Footer</div>
-                                                <div class="campl">camp</div>
-                                                <div class="other">camp</div>
-                                        </div> */}
+                                        <div className="meeting-grid">
+                                                <div class="sunday-service">
+                                                        <div className="centered">Воскресные собрания</div>
+                                                </div>
+                                                <div className="box2">Домашние группы</div>
+                                                <div className="box3">Сестринские группы</div>
+                                                <div className="box4">Молодежный клуб</div>
+                                                <div className="box5">Воскресная школа</div>
+                                                <div className="box6">Лагеря</div>
+                                                <div className="box7">Другие встречи</div>
+
+                                        </div>
+    
+
                                 </dir>
                         </dir>
                 </div>

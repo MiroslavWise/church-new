@@ -16,7 +16,7 @@ const Greeting = () => {
                                 <h2 className={`greet-title-0 ${loaded && 'show-opacity'}`}>Церковь ЕХБ «Слово Жизни» в Столине</h2>
                                 <ButtonMore 
                                         className={`greet-button m-t-5 ${loaded && 'show-opacity'}`}
-                                        title={'БОЛЬШЕ, ЧЕМ ЦЕРКОВЬ'}
+                                        title={'Больше, чем церковь'}
                                 />
                         </div>
                         

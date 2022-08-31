@@ -1,13 +1,17 @@
 import { useState, useEffect, useRef, useMemo } from "react"
+const DARK_COLOR = '#31333b';
+const LIGHT_COLOR = '#FFFFFF';
 
-const Title = ({name}) => {
+const Title = ({name, darkMode}) => {
 
+        console.log('Title darkMode',darkMode);
         const ref = useRef(null);
         const isInViewport = useIsInViewport(ref);
 
         return(
                 <>
-                        <div className={`title ${isInViewport && 'show-title'}`}>
+                
+                        <div className={`title ${isInViewport && 'show-title'}`} style={{color: `${darkMode ? DARK_COLOR : LIGHT_COLOR}`}}>
                                 {
                                         name
                                 }

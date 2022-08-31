@@ -4,11 +4,11 @@ const About = () => {
 
         return(
                 <div 
-                        className="about"
+                        className="block about-block"
                         id="main-about"
                 >
 
-                        <div className="about-block">
+                        <div className="block-content">
     
                                 <Title className="about-title"
                                         name={'О нас'}
@@ -28,7 +28,7 @@ const About = () => {
                                 <div className="button-more-wrapper">
                                         <ButtonMore
                                                 className='button-n-hover'
-                                                title={'ПОДРОБНЕЕ'}
+                                                title={'Подробнее'}
                                         />
                                 </div>
 

@@ -79,8 +79,11 @@ code {
 }
 
 .button-more{
-  padding: 17px;
-  font-size: 19px;
+  padding: 1em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 200;
   background-color: #0C8F81;
   border: none;
   color: #FFFFFF;
@@ -311,8 +314,6 @@ code {
   transition: all 1.5s ease-in-out 0.3s;
 }
 
-
-
 .show-opacity {
   opacity: 1;
   scale: 1;
@@ -321,14 +322,17 @@ code {
   background-size: 160%;
 }
 
-.about{
+.block {
   max-width: 92%;
 }
 
-.about-block{
-  flex-direction: column;
-  margin: 50px auto;
+.block-content {
   max-width: 1160px;
+  flex-direction: column;
+  margin: 3em auto;
+}
+
+.about-block {
   .text-p{
     @include d-flex-center();
     p{
@@ -401,4 +405,23 @@ code {
 .c-white{
   color: #FFFFFF;
 }
+
+// .sunday-service { grid-area: service; }
+// .small-group { grid-area: small; }
+// .pray-service { grid-area: pray; }
+// .youth-meeting { grid-area: youth; }
+// .sunday-school { grid-area: children; }
+// .camp { grid-area: camp; }
+// .other { grid-area: other; }
+
+// .grid-container {
+//   display: grid;
+//   grid-template-areas:
+//     'service service small pray '
+//     'service service youth children'
+//     'service service camp other';
+//   gap: 10px;
+//   background-color: #2196F3;
+//   padding: 10px;
+// }
 

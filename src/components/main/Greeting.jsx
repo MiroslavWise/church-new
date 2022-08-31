@@ -8,7 +8,9 @@ const Greeting = () => {
         }, [])
         return(
                 <div className={`w-100 general ${scale && 'scale'}`}>
-                        general
+                        <div className="greeting-box">
+                                
+                        </div>
                 </div>
         )
 }

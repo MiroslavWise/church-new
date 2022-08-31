@@ -11,6 +11,7 @@ $color-secondary: #3b3d4a;
 
 html{
   scroll-padding-top: 66px;
+  --webkit-scroll-behavior: smooth;
 }
 
 body {
@@ -19,6 +20,27 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --webkit-scroll-behavior: smooth;
+  overflow: overlay;
+}
+
+::-webkit-scrollbar{
+  margin-right: 2px;
+  width: 6px;
+  height: 100%;
+}
+::-webkit-scrollbar-button{
+  display: none;
+}
+::-webkit-scrollbar-track, ::-webkit-scrollbar-track-piece{
+  background-color: transparent;
+  display: none;
+}
+
+::-webkit-scrollbar-thumb{
+  border-radius: 3px;
+  width: 6px;
+  background-color: rgba(#aaaaaa, 0.3);
 }
 
 code {
@@ -205,6 +227,8 @@ code {
   }
 }
 
+//Main page
+
 .general{
   @include d-flex-center();
   height: calc(100vh);
@@ -214,7 +238,6 @@ code {
   background-position: center;
   transition: all 10s ease 3ms;
 }
-
 .scale{
   background-size: 160%;
 }

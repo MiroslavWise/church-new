@@ -19,7 +19,7 @@ const LinksId = () => {
                                 {
                                         i !== links.length -1
                                         &&
-                                        <div className="border-vertical m-2"></div>
+                                        <div className="border-vertical m-3"></div>
                                 }
                         </div>
                 ))

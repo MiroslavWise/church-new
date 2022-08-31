@@ -1,6 +1,6 @@
 @import './fonts/font.scss';
 
-$color-prime: #0c8f7f;
+$color-prime: #145b61;
 $color-secondary: #3b3d4a;
 
 @mixin d-flex-center() {
@@ -42,7 +42,7 @@ code {
   cursor: pointer;
 }
 
-@for $i from 1 through 10 {
+@for $i from 1 through 20 {
     .m-#{$i}{
     margin: 8px * $i;
   }
@@ -50,7 +50,7 @@ code {
     padding: 8px * $i;
   }
 }
-@for $i from 1 through 10 {
+@for $i from 1 through 20 {
     .m-t-#{$i}{
     margin-top: 8px * $i;
   }
@@ -58,7 +58,7 @@ code {
     padding-top: 8px * $i;
   }
 }
-@for $i from 1 through 10 {
+@for $i from 1 through 20 {
     .m-l-#{$i}{
     margin-left: 8px * $i;
   }
@@ -66,7 +66,7 @@ code {
     padding-left: 8px * $i;
   }
 }
-@for $i from 1 through 10 {
+@for $i from 1 through 20 {
     .m-r-#{$i}{
     margin-right: 8px * $i;
   }
@@ -74,7 +74,7 @@ code {
     padding-right: 8px * $i;
   }
 }
-@for $i from 1 through 10 {
+@for $i from 1 through 20 {
     .m-b-#{$i}{
     margin-bottom: 8px * $i;
   }
@@ -89,7 +89,7 @@ code {
 
 .bg-c-prime{
   background-color: $color-prime;
-  height: 65px;
+  height: 59px;
 }
 
 .bg-c-transparent{
@@ -122,6 +122,7 @@ code {
 
 .main_logo{
   height: 59px;
+  filter: invert(95%);
 }
 
 .nav-header{
@@ -136,7 +137,7 @@ code {
 }
 
 .text-nav{
-  font-weight: 800;
+  font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.05em;
   &:hover{
@@ -169,9 +170,10 @@ code {
 }
 
 .border-vertical{
-  border-left: 1.5px solid white;
+  border-left: 1px solid rgba(255,255,255,0.5);
   height: 12px;
 }
+
 .index-layout{
   min-height: calc(100vh - 75px);
 }
@@ -183,7 +185,7 @@ code {
 }
 
 .footer{
-  height: 75px;
+  height: 70px;
   width: 100%;
   background-color: $color-secondary;
   @include d-flex-center();
@@ -195,8 +197,8 @@ code {
     justify-content: space-between;
     .footer-name{
       color: rgba(#dddddd,0.2);
-      font-size: medium;
-      font-weight: 500;
+      font-size: 14px;
+      font-weight: 400;
     }
     .footer-social{
       @include d-flex-center();
@@ -205,14 +207,44 @@ code {
   }
 }
 
-.general{
-  @include d-flex-center();
-  height: calc(100vh);
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.greeting{
+  color: white;
+}
+
+.greeting-image {
   background-image: url('../assets/picture/general-back.jpg');
-  filter: brightness(55%);
+  filter: brightness(50%);
   background-size: 100%;
   background-position: center;
   transition: all 10s ease-out 3ms;
+  position: absolute;
+  height: calc(100vh);
+  width: 100%;
+}
+
+.greeting-title1 {
+  @include d-flex-center();
+  font-size: 70px;
+  filter: brightness(1);
+  opacity: 0;
+  transition: all 1.5s ease-in-out 2s;
+}
+
+.greeting-title2 {
+  @include d-flex-center();
+  font-size: 20px;
+  filter: brightness(1);
+  opacity: 0;
+  transition: all 1.5s ease-in-out 2s;
+}
+
+.show-opacity {
+  opacity: 1;
 }
 
 .scale{
@@ -221,8 +253,10 @@ code {
 
 .about{
   height: 465px;
+
 }
 
 .meeting{
   height: 678px;
+
 }

@@ -212,11 +212,11 @@ code {
   filter: brightness(55%);
   background-size: 100%;
   background-position: center;
-  transition: all 10s ease-out 3ms;
+  transition: all 10s ease 3ms;
 }
 
 .scale{
-  background-size: 140%;
+  background-size: 160%;
 }
 
 .about{

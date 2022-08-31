@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom'
+
 import {ScrollInfoBottom} from 'assets/func'
 
 const links = [
@@ -11,18 +13,25 @@ const links = [
 ]
 
 const LinksId = () => {
+        const navigate = useNavigate()
 
         return(
-                links.map(({name, link}, i) => (
-                        <div className="item-nav-link" key={i}>
-                                <div className="c-p text-nav"><ScrollInfoBottom link={link} str={name.toUpperCase()}/></div>
-                                {
-                                        i !== links.length -1
-                                        &&
-                                        <div className="border-vertical m-2"></div>
-                                }
-                        </div>
-                ))
+                <div className="nav-header">
+                        {
+                                links.map(({name, link}, i) => (
+                                        <div className="item-nav-link" key={link}>
+                                                <div className="c-p text-nav" onClick={()=>{navigate('/')}}>
+                                                        <ScrollInfoBottom link={link} str={name.toUpperCase()}/>
+                                                </div>
+                                                {
+                                                        i !== links.length -1
+                                                        &&
+                                                        <div className="border-vertical m-2"></div>
+                                                }
+                                        </div>
+                                ))
+                        }
+                </div>
         )
 }
 

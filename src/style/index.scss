@@ -74,6 +74,10 @@ code {
     monospace;
 }
 
+.button-more-wrapper{
+  @include d-flex-center();
+}
+
 .button-more{
   padding: 17px;
   font-size: 19px;
@@ -319,20 +323,26 @@ code {
 
 .about{
 
-  height: 465px;
 }
 
 .about-block{
-  @include d-flex-center();
   flex-direction: column;
   margin: 50px auto;
-  width: 1160px;
+  max-width: 1160px;
   .text-p{
     @include d-flex-center();
     p{
       text-align: center;
     }
   }
+  h4 {
+    @include d-flex-center();
+  }
+}
+
+.about-title{
+  justify-content: left;
+  align-items: left;
 }
 
 .button-n-hover{
@@ -371,6 +381,7 @@ code {
 }
 .meeting{
   height: 678px;
+  background-color: #aaaaaa;
 }
 
 .title-all-h2{

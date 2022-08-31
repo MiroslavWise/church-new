@@ -7,14 +7,16 @@ const About = () => {
                         className="w-100 about"
                         id="main-about"
                 >
+
                         <div className="about-block">
-                                <Title 
+    
+                                <Title className="about-title"
                                         name={'О нас'}
                                 />
-                                <h4 className='p-t-4 m-b-3'>Мы рады, что вы с нами!</h4>
+                                <h4 className='p-t-2 m-b-3'>Мы рады, что вы с нами!</h4>
                                 <div className='text-p m-b-5'>
                                         <p>
-                                                Церковь Христа в Плоцке – это евангельская христианская 
+                                                Церковь «Слово Жизни» в Столине – это евангельская христианская 
                                                 община, открытая для всех и для многих поколений. Евангельские 
                                                 церкви, такие как наша, принадлежат к большей семье протестантских 
                                                 деноминаций, которые, наряду с католицизмом и православием, составляют 
@@ -23,11 +25,15 @@ const About = () => {
                                                 мы, во что мы верим и какова наша история, нажмите ниже.
                                         </p>
                                 </div>
-                                <ButtonMore
-                                        className='button-n-hover'
-                                        title={'ПОДРОБНЕЕ'}
-                                />
+                                <div className="button-more-wrapper">
+                                        <ButtonMore
+                                                className='button-n-hover'
+                                                title={'ПОДРОБНЕЕ'}
+                                        />
+                                </div>
+
                         </div>
+
                 </div>
         )
 }

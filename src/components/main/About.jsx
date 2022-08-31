@@ -4,7 +4,7 @@ const About = () => {
 
         return(
                 <div 
-                        className="w-100 about"
+                        className="about"
                         id="main-about"
                 >
 

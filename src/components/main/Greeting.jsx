@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import {ButtonMore} from 'components'
 
 const Greeting = () => {
         const [loaded, setScale] = useState(false);
@@ -9,8 +10,16 @@ const Greeting = () => {
         return(
                 <div className="w-100 greeting">
                         <div className={`greeting-image ${loaded && 'scale'}`}></div>
-                        <div className={`greeting-title1 m-t-20 p-t-12 m-b-1 p-b-1 ${loaded && 'show-opacity'}`}>Добро пожаловать</div>
-                        <h2 className={`greeting-title2 ${loaded && 'show-opacity'}`}>Церковь ЕХБ «Слово Жизни» в Столине</h2>
+                        <div className={`greeting-title ${loaded && 'show-opacity'}`}>
+                                <h3 className={`greet-title-2 ${loaded && 'show-opacity'}`}>Верные Богу, служащие людям</h3>
+                                <h1 className={`greet-title-1 ${loaded && 'show-opacity'}`}>Добро пожаловать</h1>
+                                <h2 className={`greet-title-2 ${loaded && 'show-opacity'}`}>Церковь ЕХБ «Слово Жизни» в Столине</h2>
+                                <ButtonMore 
+                                        className={`greet-button m-t-5 ${loaded && 'show-opacity'}`}
+                                        title={'БОЛЬШЕ, ЧЕМ ЦЕРКОВЬ'}
+                                />
+                        </div>
+                        
                 </div>
         )
 }

@@ -1,4 +1,4 @@
-
+import { Title } from 'components'
 
 const About = () => {
 
@@ -7,7 +7,9 @@ const About = () => {
                         className="w-100 about"
                         id="main-about"
                 >
-                        main-about
+                        <Title 
+                                name={'asdfsas  saf as'}
+                        />
                 </div>
         )
 }

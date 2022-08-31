@@ -8,7 +8,7 @@ const About = () => {
                         id="main-about"
                 >
                         <Title 
-                                name={'asdfsas  saf as'}
+                                name={'О нас'}
                         />
                 </div>
         )

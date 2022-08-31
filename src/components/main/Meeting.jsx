@@ -1,4 +1,4 @@
-
+import { Title } from 'components'
 
 const Meeting = () => {
 
@@ -7,7 +7,9 @@ const Meeting = () => {
                         className="w-100 meeting"
                         id="main-meeting"
                 >
-                        main-meeting
+                        <Title 
+                                name={'Встречи'}
+                        />
                 </div>
         )
 }

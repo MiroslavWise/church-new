@@ -314,11 +314,38 @@ code {
 }
 
 .about{
-  height: 465px;
+  height: 400px;
 
 }
 
 .meeting{
-  height: 678px;
+  height: 400px;
+}
 
+.title {
+  font-family: 'Poppins';
+  font-size: xx-large;
+  font-weight: 700;
+  line-height: 120%;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #31333b;
+  letter-spacing: -0.5px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.7s ease-in-out 0.2s;
+}
+
+.show-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title_divider {
+  border-bottom-width: 8px;
+  border-bottom-style: solid;
+  padding-top: 0px;
+  margin-bottom: 20px;
+  border-bottom-color: #db9327;
+  width: 60px !important;
 }

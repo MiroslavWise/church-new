@@ -11,6 +11,7 @@ $color-secondary: #3b3d4a;
 
 html{
   scroll-padding-top: 66px;
+  --webkit-scroll-behavior: smooth;
 }
 
 body {
@@ -19,6 +20,27 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --webkit-scroll-behavior: smooth;
+  overflow: overlay;
+}
+
+::-webkit-scrollbar{
+  margin-right: 2px;
+  width: 6px;
+  height: 100%;
+}
+::-webkit-scrollbar-button{
+  display: none;
+}
+::-webkit-scrollbar-track, ::-webkit-scrollbar-track-piece{
+  background-color: transparent;
+  display: none;
+}
+
+::-webkit-scrollbar-thumb{
+  border-radius: 3px;
+  width: 6px;
+  background-color: rgba(#aaaaaa, 0.3);
 }
 
 code {
@@ -207,16 +229,13 @@ code {
   }
 }
 
-.break {
-  flex-basis: 100%;
-  height: 0;
-}
 
 .greeting{
   color: white;
 }
 
 .greeting-image {
+
   background-image: url('../assets/picture/general-back.jpg');
   filter: brightness(50%);
   background-size: 100%;
@@ -245,10 +264,10 @@ code {
 
 .show-opacity {
   opacity: 1;
+  transition: all 10s ease 3ms;
 }
-
 .scale{
-  background-size: 140%;
+  background-size: 160%;
 }
 
 .about{

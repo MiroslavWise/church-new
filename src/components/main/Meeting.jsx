@@ -1,11 +1,20 @@
+import {useContext} from 'react'
+import ModalContext from 'index'
 import { Title } from 'components'
 import { MeetingBoxes } from './modules/MeetingBoxes'
 
 const Meeting = () => {
         
+        const setUpdateModal = useContext(ModalContext)
+
+        const onChange = () => {
+                setUpdateModal.setModalVisible(true)
+                setUpdateModal.setInfoModal({title: 'Воскресные собрания', description: ''})
+
+        }
 
         return(
-                <div 
+                <div
                         className="w-100 meeting"
                         id="main-meeting"
                 >
@@ -16,7 +25,7 @@ const Meeting = () => {
                                                 darkMode={false}
                                         />
                                         <div className="meeting-flex">
-                                                <div class="sunday-service c-p">
+                                                <div class="sunday-service c-p" onClick={(e)=> {onChange(); e.stopPropagation() }}>
                                                         <div className="centered">Воскресные собрания</div>
                                                 </div>
                                                 <MeetingBoxes />

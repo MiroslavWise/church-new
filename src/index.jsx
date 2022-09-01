@@ -10,17 +10,9 @@ import { Footer } from 'components/Footer'
 import { Header } from 'components/Header'
 import { Main } from 'page'
 import { maps } from 'routes/mapping'
+import {ModalMeeting} from 'components/module/ModalMeeting'
 
 const ModalContext = React.createContext('Function')
-
-function desc (text) {
-    return(
-            <div style={{display: 'flex', flexDirection: 'column'}}>
-                    <h4 >{text}</h4>
-            </div>
-    )
-}
-
 
 const Routing = () => {
     const [modalVisible, setModalVisible] = useState(false)
@@ -48,12 +40,7 @@ const Routing = () => {
                         </Routes>
                     </div>
                 <Footer />
-            <div className={`${modalVisible && 'dimming'}`} onClick={()=>setModalVisible(false)} id='dimming'>
-                <div className={`modal-meeting ${modalVisible && "modal-visible"}`}>
-                    <div className='modal-title'><h2>{infoModal.title}</h2></div>
-                    <div className='modal-description'>{desc(infoModal.description)}</div>
-                </div>
-            </div>
+            <ModalMeeting  {...{modalVisible, infoModal, setModalVisible}}/>
             </BrowserRouter>
         </ModalContext.Provider>
     )
@@ -61,7 +48,6 @@ const Routing = () => {
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-    
         <Routing />
 )
 

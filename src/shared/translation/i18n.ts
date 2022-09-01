@@ -11,11 +11,12 @@ export default i18nPlugin
         .init({
                 resources: { ru: { translations: ru }, by: { translations: by }},
                 fallbackLng: 'ru',
+                debug: true,
                 keySeparator: false,
                 supportedLngs: ['ru', 'by'],
                 ns: ['translations'],
                 defaultNS: 'translations',
                 interpolation: {
-                        escapeValue: false,
+                        escapeValue: true,
                 },
         });

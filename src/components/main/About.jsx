@@ -11,7 +11,7 @@ const About = () => {
                         <div className="block-content">
     
                                 <Title className="about-title"
-                                        name={'about_us'}
+                                        name='add.green'
                                         darkMode
                                 />
                                 <h4 className='p-t-2 m-b-3'>Мы рады, что вы с нами!</h4>

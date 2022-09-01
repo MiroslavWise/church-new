@@ -4,6 +4,7 @@
 
 $color-prime: #145b61;
 $color-secondary: #3b3d4a;
+$color-yellow: #db9327;
 $max-1507: 1507px;
 
 @mixin d-flex-center() {
@@ -389,7 +390,7 @@ code {
   border-bottom-style: solid;
   padding-top: 0px;
   margin-bottom: 20px;
-  border-bottom-color: #db9327;
+  border-bottom-color: $color-yellow;
   width: 4em !important;
 }
 .meeting{
@@ -408,7 +409,7 @@ code {
 .title-bot-line{
   height: 8px;
   width: 65px;
-  background-color: #db9327;
+  background-color: $color-yellow;
 }
 
 .c-black{
@@ -439,7 +440,7 @@ code {
   
   .centered {
     color: #FFFFFF;
-    border: solid 3px #db9327;
+    border: solid 3px $color-yellow;
     padding: 1em;
     font-size: 18px;
     font-weight: 400 !important;
@@ -462,7 +463,7 @@ code {
 
   .centered {
     color: #FFFFFF;
-    border: solid 3px #db9327;
+    border: solid 3px $color-yellow;
     padding: 1em;
     font-size: 35px;
     font-weight: 300 !important;
@@ -475,19 +476,49 @@ code {
   }
 }
 
+.dimming{
+  display: flex;
+  position:fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(#000, 0.7);
+  width: 100vw;
+  height: 100%;
+  z-index: 1000;
+}
+
 .modal-meeting{
   position:fixed;
   top: 50%;
   left: 50%;
   display: none;
-  width: 500px;
+  width: 75%;
   height: 300px;
-  background-color: #db9327;
-  transform: translate(-50%, -50%);
+  background-color: $color-prime;
+  transform: translate(-50%, -100%);
   transition: all 0.4s ease-in-out;
+  z-index: 1000;
+  .modal-title{
+    width: 80%;
+    text-align: start;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    h2{
+      color: $color-yellow;
+    }
+    
+  }
+  .modal-description{
+    width: 80%;
+    padding-left: 60px;
+    h4{
+      color: #FFFFFF;
+    }
+  }
 }
 .modal-visible{
   @include d-flex-center();
+  flex-direction: column;
 }
 
 .teaching{

@@ -1,5 +1,6 @@
 @import './fonts/font.scss';
 @import '../components/main/modules/base64image.scss';
+@import './style-base-64.scss';
 
 $color-prime: #145b61;
 $color-secondary: #3b3d4a;
@@ -289,7 +290,6 @@ code {
 }
 
 .greeting-image {
-  background-image: url('../assets/picture/general-back.jpg');
   filter: brightness(50%);
   background-size: 100%;
   background-position: center;
@@ -390,7 +390,7 @@ code {
   width: 4em !important;
 }
 .meeting{
-  background-image: url('../assets/picture/worship-hands.jpg');
+  // background-image: url('../assets/picture/worship-hands.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -487,4 +487,18 @@ code {
   @include d-flex-center();
 }
 
+.teaching{
+  background-color: #FFFFFF;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  backdrop-filter: blur(30px);
+}
+
+.questions{
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  backdrop-filter: blur(30px);
+}
 

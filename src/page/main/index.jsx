@@ -1,7 +1,9 @@
 import {
         Greeting,
         About,
-        Meeting
+        Meeting,
+        Teaching,
+        QA,
 } from 'components/main'
 
 
@@ -13,6 +15,8 @@ const Main = () => {
                                 <Greeting />
                                 <About />
                                 <Meeting />
+                                <Teaching />
+                                <QA />
                         </div>
                 </>
                 

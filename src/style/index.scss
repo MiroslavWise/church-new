@@ -3,6 +3,7 @@
 
 $color-prime: #145b61;
 $color-secondary: #3b3d4a;
+$max-1507: 1507px;
 
 @mixin d-flex-center() {
   display: flex;
@@ -15,15 +16,21 @@ h1, h2, h3, h4, h5, h6, p{
 }
 h1{
   color: #FFFFFF;
-  font-size: 100px;
+  font-size: 5em;
+  @media (max-width: $max-1507) {
+    font-size: 4em;
+  }
 }
 h2{
   color: #FFFFFF;
-  font-size: 40px;
+  font-size: 2em;
+  @media (max-width: $max-1507) {
+    font-size: 1.8em;
+  }
 }
 h3{
   color: #FFFFFF;
-  font-size: 25px;
+  font-size: 2em;
   font-weight: 400;
 }
 h4{
@@ -302,7 +309,7 @@ code {
   filter: brightness(1);
   opacity: 0;
   transition: all 1.5s ease-in-out 0.3s;
-  max-width: 80vw;
+  max-width: 90vw;
 }
 
 .greet-button{

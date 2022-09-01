@@ -18,8 +18,8 @@ const Meeting = () => {
                         className="w-100 meeting"
                         id="main-meeting"
                 >
-                        <dir className="block">
-                                <dir className="block-content">
+                        <div className="block">
+                                <div className="block-content">
                                         <Title 
                                                 name={'meetings'}
                                                 darkMode={false}
@@ -30,8 +30,8 @@ const Meeting = () => {
                                                 </div>
                                                 <MeetingBoxes />
                                         </div>
-                                </dir>
-                        </dir>
+                                </div>
+                        </div>
                 </div>
         )
 }

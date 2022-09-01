@@ -384,9 +384,10 @@ code {
 }
 .meeting{
   background-image: url('../assets/picture/worship-hands.jpg');
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  backdrop-filter: blur(30px);
 }
 
 .title-all-h2{

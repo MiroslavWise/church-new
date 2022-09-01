@@ -10,7 +10,7 @@ const Meeting = () => {
                         <dir className="block">
                                 <dir className="block-content">
                                         <Title 
-                                                name={'Встречи'}
+                                                name={'meetings'}
                                                 darkMode={false}
                                         />
 

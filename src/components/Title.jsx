@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef, useMemo } from "react"
+import { useTranslation } from 'react-i18next';
+
 const DARK_COLOR = '#31333b';
 const LIGHT_COLOR = '#FFFFFF';
 
 const Title = ({name, darkMode}) => {
-
-        console.log('Title darkMode',darkMode);
+        const {t} = useTranslation()
         const ref = useRef(null);
         const isInViewport = useIsInViewport(ref);
 
@@ -12,9 +13,7 @@ const Title = ({name, darkMode}) => {
                 <>
                 
                         <div className={`title ${isInViewport && 'show-title'}`} style={{color: `${darkMode ? DARK_COLOR : LIGHT_COLOR}`}}>
-                                {
-                                        name
-                                }
+                                {t(name)}
                         </div>
                         <div ref={ref} className="title_divider"></div>
                 </>
@@ -26,8 +25,8 @@ function useIsInViewport(ref) {
 
         const observer = useMemo(
                 () =>
-                new IntersectionObserver(([entry]) =>
-                setIsIntersecting(entry.isIntersecting),
+                        new IntersectionObserver(([entry]) =>
+                        setIsIntersecting(entry.isIntersecting),
                 ),
                 [],
         );

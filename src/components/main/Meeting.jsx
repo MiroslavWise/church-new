@@ -1,6 +1,8 @@
 import { Title } from 'components'
+import { MeetingBoxes } from './modules/MeetingBoxes'
 
 const Meeting = () => {
+        
 
         return(
                 <div 
@@ -13,21 +15,12 @@ const Meeting = () => {
                                                 name={'meetings'}
                                                 darkMode={false}
                                         />
-
-                                        <div className="meeting-grid">
-                                                <div class="sunday-service">
+                                        <div className="meeting-flex">
+                                                <div class="sunday-service c-p">
                                                         <div className="centered">Воскресные собрания</div>
                                                 </div>
-                                                <div className="box2">Домашние группы</div>
-                                                <div className="box3">Сестринские группы</div>
-                                                <div className="box4">Молодежный клуб</div>
-                                                <div className="box5">Воскресная школа</div>
-                                                <div className="box6">Лагеря</div>
-                                                <div className="box7">Другие встречи</div>
-
+                                                <MeetingBoxes />
                                         </div>
-    
-
                                 </dir>
                         </dir>
                 </div>

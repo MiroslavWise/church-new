@@ -1,4 +1,5 @@
 @import './fonts/font.scss';
+@import '../components/main/modules/base64image.scss';
 
 $color-prime: #145b61;
 $color-secondary: #3b3d4a;
@@ -357,7 +358,6 @@ code {
 }
 
 .title {
-  font-family: 'Poppins';
   font-size: 2.6em;
   font-weight: 700;
   line-height: 120%;
@@ -408,63 +408,76 @@ code {
   color: #FFFFFF;
 }
 
-.meeting-grid {
+.meeting-flex {
+  display: flex;
+  padding: 5px;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 460px;
+}
+.meeting-items-grid{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 100px;
-  gap: 2em;
-  margin: 2.5em 0.5em;
-}
-.sunday-service {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 4;
-  background-image: url('../assets/picture/sunday-service.jpg');
-  filter: opacity(65%);
-}
-.box2 {
-  grid-column-start: 3;
-  grid-row-start: 1;
-}
-.box3 {
-  grid-column-start: 4;
-  grid-row-start: 1;
-}
-.box4 {
-  grid-column-start: 3;
-  grid-row-start: 2;
-}
-.box5 {
-  grid-column-start: 4;
-  grid-row-start: 2;
-}
-.box6 {
-  grid-column-start: 3;
-  grid-row-start: 3;
-}
-.box7 {
-  grid-column-start: 4;
-  grid-row-start: 3;
+  grid-template-columns: repeat(2, 1fr);
+  width: calc(50% - 10px );
+  height: 100%;
+  gap: 20px;
 }
 
-.meeting-grid > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 2em 2em;
+.item-meeting{
+  @include d-flex-center();
+  background-size: 100%;
+  
+  .centered {
+    color: #FFFFFF;
+    border: solid 3px #db9327;
+    padding: 1em;
+    font-size: 18px;
+    font-weight: 400 !important;
+    text-align: center;
+    // font-family: 'Poppins';
+    text-transform: uppercase;
+    letter-spacing: 3px !important;
+    width: 60%;
+    pointer-events: none;
+    padding: 10px 20px;
+}
+}
+
+.sunday-service {
+  width: calc(50% - 10px );
+  height: 100%;
+  background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/picture/sunday-service.jpg');
+  background-size: cover;
+  @include d-flex-center();
 
   .centered {
     color: #FFFFFF;
     border: solid 3px #db9327;
     padding: 1em;
-    font-size: x-large;
+    font-size: 35px;
     font-weight: 300 !important;
     text-align: center;
-    font-family: 'Poppins';
     text-transform: uppercase;
     letter-spacing: 3px !important;
-    min-width: 199px;
+    width: 60%;
+    padding: 10px 20px;
+    pointer-events: none;
+  }
 }
+
+.modal-meeting{
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  display: none;
+  width: 500px;
+  height: 300px;
+  background-color: #db9327;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease-in-out;
+}
+.modal-visible{
+  @include d-flex-center();
 }
 
 

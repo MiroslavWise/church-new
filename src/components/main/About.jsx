@@ -4,7 +4,7 @@ const About = () => {
 
         return(
                 <div 
-                        className="block about-block w-100"
+                        className="block about-block w-100 b-d-f-c"
                         id="main-about"
                 >
                         <div className="block-content">

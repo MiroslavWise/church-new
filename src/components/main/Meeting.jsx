@@ -15,7 +15,7 @@ const Meeting = () => {
 
         return(
                 <div
-                        className="w-100 meeting"
+                        className="w-100 meeting b-d-f-c"
                         id="main-meeting"
                 >
                         <div className="block">

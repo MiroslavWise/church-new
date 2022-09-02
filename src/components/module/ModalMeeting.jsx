@@ -11,6 +11,7 @@ const ModalMeeting = ({modalVisible, infoModal, setModalVisible}) => (
                 <div className={`modal-meeting ${modalVisible && "modal-visible"}`} onClick={(e)=>{e.stopPropagation()}}>
                         <div className='modal-title'><h2>{infoModal.title}</h2></div>
                         <div className='modal-description'>{desc(infoModal.description)}</div>
+                        <div className="close" onClick={()=>{setModalVisible(false)}}></div>
                 </div>
         </div>
 )

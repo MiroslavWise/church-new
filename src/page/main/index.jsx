@@ -7,6 +7,7 @@ import {
         Events,
         PastorBlog,
         Support,
+        Maps
 } from 'components/main'
 
 
@@ -23,6 +24,7 @@ const Main = () => {
                                 <Events />
                                 <PastorBlog />
                                 <Support />
+                                <Maps />
                         </div>
                 </>
                 

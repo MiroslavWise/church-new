@@ -5,6 +5,7 @@
 $color-prime: #145b61;
 $color-secondary: #3b3d4a;
 $color-yellow: #db9327;
+$color-w-g: #fdfdfd;
 $max-1507: 1507px;
 
 @mixin d-flex-center() {
@@ -17,21 +18,21 @@ h1, h2, h3, h4, h5, h6, p{
   margin: 0;
 }
 h1{
-  color: #DDDDDD;
+  color: $color-w-g;
   font-size: 5em;
   @media (max-width: $max-1507) {
     font-size: 4em;
   }
 }
 h2{
-  color: #DDDDDD;
+  color: $color-w-g;
   font-size: 2em;
   @media (max-width: $max-1507) {
     font-size: 1.8em;
   }
 }
 h3{
-  color: #DDDDDD;
+  color: $color-w-g;
   font-size: 2em;
   font-weight: 400;
 }
@@ -97,11 +98,11 @@ code {
   font-weight: 200;
   background-color: #0C8F81;
   border: none;
-  color: #DDDDDD;
+  color: $color-w-g;
   transition: all 0.2s ease;
   &:hover{
     color: $color-secondary;
-    background-color: #DDDDDD;
+    background-color: $color-w-g;
   }
 }
 
@@ -186,7 +187,7 @@ code {
   left: 0;
   z-index: 999;
   transition: all 0.3s ease-in-out 3ms;
-  border-bottom: 1px solid rgba(#dddddd, 0.2);
+  border-bottom: 1px solid rgba($color-w-g, 0.2);
   position:fixed;
   @include d-flex-center();
   flex-direction: row;
@@ -275,7 +276,7 @@ code {
     @include d-flex-center();
     justify-content: space-between;
     .footer-name{
-      color: rgba(#dddddd,0.2);
+      color: rgba($color-w-g,0.2);
       font-size: 14px;
       font-weight: 400;
     }
@@ -345,9 +346,14 @@ code {
   margin: 3em auto;
 }
 
-.about-block {
+.b-d-f-c{
+  @include d-flex-center();
   background-size: cover;
   background-position: center;
+}
+
+.about-block {
+  background-color: $color-w-g;
   background-attachment: scroll;
   .text-p{
     @include d-flex-center();
@@ -368,7 +374,7 @@ code {
 .button-n-hover{
   &:hover{
     background-color: #0C8F81;
-    color: #DDDDDD;
+    color: $color-w-g;
   }
 }
 
@@ -403,11 +409,7 @@ code {
   align-self: flex-start;
 }
 .meeting{
-  // background-image: url('../assets/picture/worship-hands.jpg');
-  background-size: cover;
-  background-position: center;
   background-attachment: fixed;
-  backdrop-filter: blur(30px);
 }
 
 .title-all-h2{
@@ -425,7 +427,7 @@ code {
   color: #31333B;
 }
 .c-white{
-  color: #DDDDDD;
+  color: $color-w-g;
 }
 
 .meeting-flex {
@@ -448,13 +450,12 @@ code {
   background-size: 100%;
   
   .centered {
-    color: #DDDDDD;
+    color: $color-w-g;
     border: solid 3px $color-yellow;
     padding: 1em;
     font-size: 18px;
     font-weight: 400 !important;
     text-align: center;
-    // font-family: 'Poppins';
     text-transform: uppercase;
     letter-spacing: 3px !important;
     width: 60%;
@@ -471,7 +472,7 @@ code {
   @include d-flex-center();
 
   .centered {
-    color: #DDDDDD;
+    color: $color-w-g;
     border: solid 3px $color-yellow;
     padding: 1em;
     font-size: 35px;
@@ -522,7 +523,7 @@ code {
     width: 80%;
     padding-left: 60px;
     h4{
-      color: #DDDDDD;
+      color: $color-w-g;
     }
   }
 }
@@ -533,17 +534,10 @@ code {
 }
 
 .teaching{
-  // background-color: #DDDDDD;
-  @include d-flex-center();
-  background-size: cover;
-  background-position: center;
-  background-attachment: scroll;
+  background-color: $color-w-g;
 }
 
 .questions{
-  @include d-flex-center();
-  background-size: cover;
-  background-position: center;
   background-attachment: fixed;
   backdrop-filter: blur(30px);
   .block-content{
@@ -553,23 +547,33 @@ code {
 }
 
 .events{
-  @include d-flex-center();
-  // background-color: #DDDDDD;
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
+  background-color: $color-w-g;
 }
 
 .pastor_blog{
-  @include d-flex-center();
-  background-size: cover;
-  background-position: center;
   background-attachment: fixed;
 }
 
 .support{
-  @include d-flex-center();
-  background-size: cover;
-  background-position: center;
-  background-attachment: scroll;
+  background-color: $color-w-g;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 13px;
+    cursor: pointer;
+    &::before, &::after{
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 4px;
+    background: $color-w-g;
+    }
+    &::before{
+      transform: rotate(45deg);
+    }
+    &::after{
+    transform: rotate(-45deg);
+    }
 }

@@ -6,6 +6,7 @@ import { QA } from "./Q&A"
 import { Events } from "./Events"
 import { PastorBlog } from "./PastorBlog"
 import { Support } from "./Support"
+import { Contact } from "./Contact"
 import { Maps } from "./Maps"
 
 export {
@@ -17,5 +18,6 @@ export {
         Events,
         PastorBlog,
         Support,
+        Contact,
         Maps
 }

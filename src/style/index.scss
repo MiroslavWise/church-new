@@ -558,6 +558,10 @@ code {
   background-color: $color-w-g;
 }
 
+.contact{
+  background-color: $color-secondary;
+}
+
 .close{
     position: absolute;
     top: 0;
@@ -576,4 +580,8 @@ code {
     &::after{
     transform: rotate(-45deg);
     }
+}
+
+.ymap {
+  height: 400px;
 }

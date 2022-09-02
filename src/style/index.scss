@@ -57,6 +57,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --webkit-scroll-behavior: smooth;
+  -moz-osx-scroll-behavior: smooth;
   overflow: overlay;
 }
 
@@ -259,6 +260,7 @@ code {
   min-height: calc(100vh - 75px);
   @include d-flex-center();
   flex-direction: column;
+  scroll-behavior: smooth;
 }
 
 .footer{

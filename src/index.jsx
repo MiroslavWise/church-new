@@ -14,6 +14,8 @@ import {ModalMeeting} from 'components/module/ModalMeeting'
 
 const ModalContext = React.createContext('Function')
 
+window.document.getElementsByTagName('body')[0].scrollIntoView({behavior:'smooth'})
+
 const Routing = () => {
     const [modalVisible, setModalVisible] = useState(false)
     const [infoModal, setInfoModal] = useState({

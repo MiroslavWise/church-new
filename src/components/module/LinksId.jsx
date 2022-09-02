@@ -1,18 +1,21 @@
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 import {ScrollInfoBottom} from 'assets/func'
 
 const links = [
-        {name: 'О нас', link: 'about'},
-        {name: 'Встречи', link: 'meeting'},
-        {name: 'Учение', link: 'teaching'},
-        {name: 'Вопросы и ответы', link: 'questions'},
-        {name: 'Мероприятия', link: 'events'},
-        {name: 'Поддержка', link: 'support'},
-        {name: 'Контакты', link: 'contact'},
+        {name: 'about_us', link: 'about'},
+        {name: 'meetings', link: 'meeting'},
+        {name: 'teaching', link: 'teaching'},
+        {name: 'questions_answers', link: 'questions'},
+        {name: 'events', link: 'events'},
+        {name: 'pastor_blog', link: 'blog'},
+        {name: 'support', link: 'support'},
+        {name: 'contact', link: 'contact'},
 ]
 
 const LinksId = () => {
+        const {t} = useTranslation()
         const navigate = useNavigate()
 
         return(
@@ -21,7 +24,7 @@ const LinksId = () => {
                                 links.map(({name, link}, i) => (
                                         <div className="item-nav-link" key={link}>
                                                 <div className="c-p text-nav" onClick={()=>{navigate('/')}}>
-                                                        <ScrollInfoBottom link={link} str={name.toUpperCase()}/>
+                                                        <ScrollInfoBottom link={link} str={t(name).toUpperCase()}/>
                                                 </div>
                                                 {
                                                         i !== links.length -1

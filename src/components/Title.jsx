@@ -11,7 +11,6 @@ const Title = ({name, darkMode}) => {
 
         return(
                 <>
-                
                         <div className={`title ${isInViewport && 'show-title'}`} style={{color: `${darkMode ? DARK_COLOR : LIGHT_COLOR}`}}>
                                 {t(name)}
                         </div>

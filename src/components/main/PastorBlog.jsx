@@ -1,12 +1,12 @@
 import { Title } from 'components'
 
-const QA = () => {
+const PastorBlog = () => {
         return(
-                <div className="w-100 questions" id='main-questions'>
+                <div className="w-100 pastor_blog" id='main-blog'>
                         <div className="block w-100">
                                 <div className="block-content">
                                         <Title 
-                                                name={'questions_answers'}
+                                                name={'pastor_blog'}
                                                 darkMode={false}
                                         />
                                 </div>
@@ -15,4 +15,4 @@ const QA = () => {
         )
 }
 
-export {QA}
+export {PastorBlog}

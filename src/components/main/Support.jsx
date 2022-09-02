@@ -1,13 +1,13 @@
 import { Title } from 'components'
 
-const QA = () => {
+const Support = () => {
         return(
-                <div className="w-100 questions" id='main-questions'>
+                <div className="w-100 support" id='main-support'>
                         <div className="block w-100">
                                 <div className="block-content">
                                         <Title 
-                                                name={'questions_answers'}
-                                                darkMode={false}
+                                                name={'support'}
+                                                darkMode
                                         />
                                 </div>
                         </div>
@@ -15,4 +15,4 @@ const QA = () => {
         )
 }
 
-export {QA}
+export {Support}

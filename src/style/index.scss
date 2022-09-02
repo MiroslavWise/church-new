@@ -17,21 +17,21 @@ h1, h2, h3, h4, h5, h6, p{
   margin: 0;
 }
 h1{
-  color: #FFFFFF;
+  color: #DDDDDD;
   font-size: 5em;
   @media (max-width: $max-1507) {
     font-size: 4em;
   }
 }
 h2{
-  color: #FFFFFF;
+  color: #DDDDDD;
   font-size: 2em;
   @media (max-width: $max-1507) {
     font-size: 1.8em;
   }
 }
 h3{
-  color: #FFFFFF;
+  color: #DDDDDD;
   font-size: 2em;
   font-weight: 400;
 }
@@ -97,11 +97,11 @@ code {
   font-weight: 200;
   background-color: #0C8F81;
   border: none;
-  color: #FFFFFF;
+  color: #DDDDDD;
   transition: all 0.2s ease;
   &:hover{
     color: $color-secondary;
-    background-color: #FFFFFF;
+    background-color: #DDDDDD;
   }
 }
 
@@ -334,7 +334,7 @@ code {
 }
 
 .block {
-  max-width: 92%;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -346,6 +346,9 @@ code {
 }
 
 .about-block {
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
   .text-p{
     @include d-flex-center();
     p{
@@ -365,7 +368,7 @@ code {
 .button-n-hover{
   &:hover{
     background-color: #0C8F81;
-    color: #FFFFFF;
+    color: #DDDDDD;
   }
 }
 
@@ -373,6 +376,8 @@ code {
   font-size: 2.6em;
   font-weight: 700;
   line-height: 120%;
+  justify-self: start;
+  align-self: flex-start;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: -0.5px;
@@ -394,6 +399,8 @@ code {
   margin-bottom: 20px;
   border-bottom-color: $color-yellow;
   width: 4em !important;
+  justify-self: start;
+  align-self: flex-start;
 }
 .meeting{
   // background-image: url('../assets/picture/worship-hands.jpg');
@@ -418,7 +425,7 @@ code {
   color: #31333B;
 }
 .c-white{
-  color: #FFFFFF;
+  color: #DDDDDD;
 }
 
 .meeting-flex {
@@ -441,7 +448,7 @@ code {
   background-size: 100%;
   
   .centered {
-    color: #FFFFFF;
+    color: #DDDDDD;
     border: solid 3px $color-yellow;
     padding: 1em;
     font-size: 18px;
@@ -464,7 +471,7 @@ code {
   @include d-flex-center();
 
   .centered {
-    color: #FFFFFF;
+    color: #DDDDDD;
     border: solid 3px $color-yellow;
     padding: 1em;
     font-size: 35px;
@@ -494,6 +501,7 @@ code {
   top: 50%;
   left: 50%;
   display: none;
+  opacity: 0;
   width: 75%;
   height: 300px;
   background-color: $color-prime;
@@ -514,27 +522,54 @@ code {
     width: 80%;
     padding-left: 60px;
     h4{
-      color: #FFFFFF;
+      color: #DDDDDD;
     }
   }
 }
 .modal-visible{
   @include d-flex-center();
   flex-direction: column;
+  opacity: 1;
 }
 
 .teaching{
-  background-color: #FFFFFF;
+  // background-color: #DDDDDD;
+  @include d-flex-center();
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+}
+
+.questions{
+  @include d-flex-center();
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   backdrop-filter: blur(30px);
+  .block-content{
+    @include d-flex-center();
+    flex-direction: column;
+  }
 }
 
-.questions{
+.events{
+  @include d-flex-center();
+  // background-color: #DDDDDD;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+}
+
+.pastor_blog{
+  @include d-flex-center();
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.support{
+  @include d-flex-center();
   background-size: cover;
   background-position: center;
   background-attachment: scroll;
-  backdrop-filter: blur(30px);
 }
-

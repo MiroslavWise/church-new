@@ -4,6 +4,9 @@ import {
         Meeting,
         Teaching,
         QA,
+        Events,
+        PastorBlog,
+        Support,
 } from 'components/main'
 
 
@@ -17,6 +20,9 @@ const Main = () => {
                                 <Meeting />
                                 <Teaching />
                                 <QA />
+                                <Events />
+                                <PastorBlog />
+                                <Support />
                         </div>
                 </>
                 

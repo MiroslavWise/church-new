@@ -4,12 +4,10 @@ const About = () => {
 
         return(
                 <div 
-                        className="block about-block"
+                        className="block about-block w-100"
                         id="main-about"
                 >
-
                         <div className="block-content">
-    
                                 <Title className="about-title"
                                         name='about_us'
                                         darkMode

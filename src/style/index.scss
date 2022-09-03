@@ -1,6 +1,7 @@
 @import './fonts/font.scss';
 @import '../components/main/modules/base64image.scss';
 @import './style-base-64.scss';
+@import '../components/main/stylemain.scss';
 
 $color-prime: #145b61;
 $color-secondary: #3b3d4a;
@@ -110,6 +111,10 @@ code {
   &:hover{
     color: rgba($color-prime, 0.7);
   }
+}
+
+.color-w-g{
+  color: $color-w-g;
 }
 
 .w-100{
@@ -543,7 +548,58 @@ code {
     @include d-flex-center();
     flex-direction: column;
   }
+  .questions-block-accordion{
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+  }
 }
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+label {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  background: transparent;
+  color: white;
+  padding: .5em;
+  &::before, &::after{
+    content: "";
+    top: 18px;
+    left: -8px;
+    position: absolute;
+    width: 12px;
+    height: 3px;
+    background: $color-w-g;
+    transition: all 0.4s ease-in-out;
+  }
+    &::before{
+      transform: rotate(90deg);
+    }
+    &::after{
+    transform: rotate(0deg);
+    }
+}
+section {
+  max-height: 0;
+  color: $color-w-g;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+@for $i from 0 to 6 {
+    #toggle#{$i}:checked ~ #content#{$i}{
+      max-height: 6em;
+    }
+    #toggle#{$i}:checked ~ #label#{$i}{
+    &::before{
+        transform: rotate(0deg);
+    }
+  }
+}
+
 
 .events{
   background-color: $color-w-g;

@@ -1,4 +1,5 @@
 import { Title } from 'components'
+import { Accordion } from './modules/Accordion'
 
 const QA = () => {
         return(
@@ -9,6 +10,8 @@ const QA = () => {
                                                 name={'questions_answers'}
                                                 darkMode={false}
                                         />
+                                        <p className='color-w-g' style={{fontSize: 18}}>Не все так однозначно? Мы понимаем это, поэтому подготовили ответы на часто задаваемые вопросы.</p>
+                                        <Accordion />
                                 </div>
                         </div>
                 </div>

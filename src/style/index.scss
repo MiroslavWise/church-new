@@ -113,6 +113,10 @@ code {
   }
 }
 
+.color-w-g{
+  color: $color-w-g;
+}
+
 .w-100{
   width: 100%;
 }
@@ -544,7 +548,36 @@ code {
     @include d-flex-center();
     flex-direction: column;
   }
+  .questions-block-accordion{
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+  }
 }
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  background: transparent;
+  color: white;
+  padding: .5em;
+}
+section {
+  max-height: 0;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+@for $i from 0 to 6 {
+    #toggle#{$i}:checked ~ #content#{$i}{
+    max-height: 6em;
+  }
+}
+
 
 .events{
   background-color: $color-w-g;

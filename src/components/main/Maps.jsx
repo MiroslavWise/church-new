@@ -21,7 +21,7 @@ const Maps = () => {
         useEffect(() => {                
                 window.addEventListener("keydown", handleCtrlKeydown, false);
                 window.addEventListener("keyup", handleCtrlKeyup, false);
-                
+
                 return () => {
                         window.removeEventListener("keydown", handleCtrlKeydown, false);
                         window.removeEventListener("keyup", handleCtrlKeyup, false);

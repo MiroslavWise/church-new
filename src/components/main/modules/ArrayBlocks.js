@@ -1,4 +1,9 @@
-const ItemsMeeting = [
+import placeholder from 'assets/svg/placeholder.svg'
+import phone from 'assets/svg/phone.svg'
+import email from 'assets/svg/email.svg'
+import clock from 'assets/svg/clock.svg'
+
+const itemsMeeting = [
         {
                 title: 'Домашние группы', 
                 description:'Мы практикуем близкие отношения в малых группах, где мы молимся, читаем Библию и - многими другими способами - поддерживаем друг друга в следовании за Христом в нашей повседневной жизни. Малые группы - это безопасное и гостеприимное место для каждого.',
@@ -52,4 +57,23 @@ const questions = [
         },
 ]
 
-export {ItemsMeeting, questions}
+const contacts = [
+        {
+                text: 'г. Столин, \nул. Советская 94Б', 
+                logo: placeholder,
+        },
+        {
+                text: '+375(29) 201 62 38', 
+                logo: phone,
+        },
+        {
+                text: 'slovostolin@yandex.by', 
+                logo: email,
+        },
+        {
+                text: 'Собрания: \nкаждое воскресение в 10:00 и 17:00', 
+                logo: clock,
+        }
+]
+
+export {itemsMeeting, questions, contacts}

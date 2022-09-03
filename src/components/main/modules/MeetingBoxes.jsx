@@ -1,6 +1,6 @@
 import {useContext} from 'react'
 import ModalContext from 'index'
-import {ItemsMeeting} from './ArrayBlocks'
+import {itemsMeeting} from './ArrayBlocks'
 
 const MeetingBoxes = ({}) => {
 
@@ -17,7 +17,7 @@ const MeetingBoxes = ({}) => {
         return(
                 <div className="meeting-items-grid">
                         {
-                                ItemsMeeting.map(({title, description}, i)=> (
+                                itemsMeeting.map(({title, description}, i)=> (
                                         <div className={`item-meeting c-p item-${i+1}`} key={title} onClick={(e)=> {onChange(title, description); e.stopPropagation() }}>
                                                 <div className="centered">
                                                         {title}

@@ -12,18 +12,12 @@ const mapState = {
 
 
 const Maps = () => {
-        const [controlPressed, setControl] = useState(0);
-        const handleCtrlKeydown = useCallback((event) => {
-                if (event.key === "Control") {
-                        setControl(true);
-                }
-        }, []);
-        const handleCtrlKeyup = useCallback((event) => {
-                if (event.key === "Control") {
-                        setControl(false);
-                }
-        }, []);
-            
+        const [controlPressed, setControl] = useState(0)
+        const [ctrlDisplay, setCtrlDisplay] = useState(false)
+
+        const handleCtrlKeydown = useCallback((event) => {event.key === "Control" && setControl(true)}, []);
+        const handleCtrlKeyup = useCallback((event) => {event.key === "Control" && setControl(false)}, []);
+
         useEffect(() => {                
                 window.addEventListener("keydown", handleCtrlKeydown, false);
                 window.addEventListener("keyup", handleCtrlKeyup, false);
@@ -34,16 +28,13 @@ const Maps = () => {
                 };
         }, []);
 
-        const [ctrlDisplay, setCtrlDisplay] = useState(false)
         useEffect(() => {
-                        if (ctrlDisplay) {
-                                setTimeout(() => {
-                                        setCtrlDisplay(false);
-                                }, 1500);
-                        }
-                }, 
-                [ctrlDisplay]
-        );
+                if (ctrlDisplay) {
+                        setTimeout(() => {
+                                setCtrlDisplay(false);
+                        }, 1500);
+                }
+        }, [ctrlDisplay]);
 
 
         return (

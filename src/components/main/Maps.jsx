@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { YMaps, Map, Placemark } from "react-yandex-maps";
 
 const coordinates = [51.891994, 26.859789];
@@ -9,6 +10,15 @@ const mapState = {
 
 
 const Maps = () => {
+
+        const [enter, setEnter] = useState(false)
+
+        document.getElementById('main-map')?.addEventListener('mouseover', () => {
+                setEnter(true)
+        })
+        document.getElementById('main-map')?.addEventListener('mouseleave', () => {
+                setEnter(false)
+        })
         return (
                 <div id="main-map" className={"w-100 ymap"}>
                         <YMaps>

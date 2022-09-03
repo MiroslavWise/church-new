@@ -334,7 +334,7 @@ code {
 }
 
 .block {
-  max-width: 100%;
+  max-width: 92%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -623,4 +623,26 @@ code {
   to {
     opacity: 0;
   }
+}
+
+.contact-block{
+  margin: 5em 4em;
+}
+.contact-items-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
+  gap: 20px;
+}
+
+.contact-item{
+  background-size: 100%;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+
+.contact-item-logo{
+  height: 55px;
+  margin-bottom: 1em;
 }

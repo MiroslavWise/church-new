@@ -561,20 +561,42 @@ input[type="checkbox"] {
 }
 label {
   position: relative;
-  display: block;
+  display: flex;
   cursor: pointer;
   background: transparent;
   color: white;
   padding: .5em;
+  &::before, &::after{
+    content: "";
+    top: 18px;
+    left: -8px;
+    position: absolute;
+    width: 12px;
+    height: 3px;
+    background: $color-w-g;
+    transition: all 0.4s ease-in-out;
+  }
+    &::before{
+      transform: rotate(90deg);
+    }
+    &::after{
+    transform: rotate(0deg);
+    }
 }
 section {
   max-height: 0;
+  color: $color-w-g;
   transition: all 0.4s ease-in-out;
   overflow: hidden;
 }
 @for $i from 0 to 6 {
     #toggle#{$i}:checked ~ #content#{$i}{
-    max-height: 6em;
+      max-height: 6em;
+    }
+    #toggle#{$i}:checked ~ #label#{$i}{
+    &::before{
+        transform: rotate(0deg);
+    }
   }
 }
 

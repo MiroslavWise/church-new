@@ -33,7 +33,7 @@ const Contact = () => {
                                                 name={'contact'}
                                                 darkMode={false}
                                         />
-                                        <div className="contact-block contact-items-grid">
+                                        <div className="contact-items contact-items-grid">
                                             {
                                                     Contacts.map(({text, logo}, i)=> (
                                                             <div className={`contact-item c-p `} key={text}>

@@ -2,8 +2,6 @@ import {
         About
 } from 'page'
 
-const Routings = [
+export const Routings = [
         {element: About, path: '/about'},
 ]
-
-export {Routings}

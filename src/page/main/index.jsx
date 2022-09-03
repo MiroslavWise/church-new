@@ -13,23 +13,19 @@ import {
 
 
 const Main = () => {
-
         return(
-                <>
-                        <div className="main_container">
-                                <Greeting />
-                                <About />
-                                <Meeting />
-                                <Teaching />
-                                <QA />
-                                <Events />
-                                <PastorBlog />
-                                <Support />
-                                <Contact />
-                                <Maps />
-                        </div>
-                </>
-                
+                <div className="main_container">
+                        <Greeting />
+                        <About />
+                        <Meeting />
+                        <Teaching />
+                        <QA />
+                        <Events />
+                        <PastorBlog />
+                        <Support />
+                        <Contact />
+                        <Maps />
+                </div>
         )
 }
 

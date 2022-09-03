@@ -1,8 +1,6 @@
 import {title} from './by/title'
 
 
-const by = {
+export const by = {
         ...title,
 }
-
-export {by}

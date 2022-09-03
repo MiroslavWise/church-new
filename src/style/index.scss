@@ -39,7 +39,6 @@ h3{
 h4{
   font-size: 20px;
   font-weight: 400;
-  color: #535353;
 }
 
 button{
@@ -565,13 +564,13 @@ code {
 .close{
     position: absolute;
     top: 0;
-    right: 13px;
+    right: 16px;
     cursor: pointer;
     &::before, &::after{
     content: "";
     position: absolute;
-    width: 26px;
-    height: 4px;
+    width: 32px;
+    height: 5px;
     background: $color-w-g;
     }
     &::before{

@@ -1,7 +1,5 @@
 import {title} from './ru/title'
 
-const ru = {
+export const ru = {
         ...title,
 }
-
-export {ru}

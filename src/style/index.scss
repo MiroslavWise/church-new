@@ -584,3 +584,43 @@ code {
 .ymap {
   height: 400px;
 }
+
+.map-ctrl-display {
+  width: 100%; 
+  height: 400px;
+  position: absolute; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 100; 
+  pointer-events: none;
+  opacity: 0;
+}
+
+.map-ctrl-display-text{
+  position: relative; 
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  color: white; 
+  text-align: center; 
+  font-size: 1.5em; 
+  pointer-events: none;
+}
+
+.map-ctrl-display-effect{
+  animation: map-opacity-animation 1.5s ease-in-out; 
+  pointer-events: none;
+}
+@keyframes map-opacity-animation {
+  from {
+    opacity: 0;
+  }
+  20%{
+    opacity: 1;
+  }
+  80%{
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

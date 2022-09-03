@@ -1,5 +1,7 @@
-import { useState } from "react";
 import { YMaps, Map, Placemark } from "react-yandex-maps";
+import { useState, useCallback, useEffect } from 'react'
+
+
 
 const coordinates = [51.891994, 26.859789];
 const mapState = {
@@ -10,24 +12,61 @@ const mapState = {
 
 
 const Maps = () => {
+        const [controlPressed, setControl] = useState(0);
+        const handleCtrlKeydown = useCallback((event) => {
+                if (event.key === "Control") {
+                        setControl(true);
+                }
+        }, []);
+        const handleCtrlKeyup = useCallback((event) => {
+                if (event.key === "Control") {
+                        setControl(false);
+                }
+        }, []);
+            
+        useEffect(() => {                
+                window.addEventListener("keydown", handleCtrlKeydown, false);
+                window.addEventListener("keyup", handleCtrlKeyup, false);
+                
+                return () => {
+                        window.removeEventListener("keydown", handleCtrlKeydown, false);
+                        window.removeEventListener("keyup", handleCtrlKeyup, false);
+                };
+        }, []);
 
-        const [enter, setEnter] = useState(false)
+        const [ctrlDisplay, setCtrlDisplay] = useState(false)
+        useEffect(() => {
+                        if (ctrlDisplay) {
+                                setTimeout(() => {
+                                        setCtrlDisplay(false);
+                                }, 1500);
+                        }
+                }, 
+                [ctrlDisplay]
+        );
 
-        document.getElementById('main-map')?.addEventListener('mouseover', () => {
-                setEnter(true)
-        })
-        document.getElementById('main-map')?.addEventListener('mouseleave', () => {
-                setEnter(false)
-        })
+
         return (
-                <div id="main-map" className={"w-100 ymap"}>
+                <div id="main-map" className={`w-100 ymap`} >
+                        <div id="map-ctrl-display" className={`map-ctrl-display ${ctrlDisplay && 'map-ctrl-display-effect'}`}>
+                                <div className="map-ctrl-display-text">
+                                        Чтобы изменить масштаб, прокручивайте карту, удерживая клавишу Ctrl.
+                                </div>
+                        </div>
                         <YMaps>
                                 <Map 
                                         state={mapState}
                                         width="100%"
                                         height="100%"
-                                        instanceRef={ref => { ref && ref.behaviors.disable('scrollZoom'); }}
-                                        
+                                        onWheel={(e)=> {
+                                                if (!controlPressed) {
+                                                        e.stopPropagation() 
+                                                        e.preventDefault()
+                                                        setCtrlDisplay(true);
+                                                } else {
+                                                        setCtrlDisplay(false);
+                                                }
+                                        }}
                                 >
                                         <Placemark 
                                                 geometry={coordinates}

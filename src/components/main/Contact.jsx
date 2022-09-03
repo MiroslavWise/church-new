@@ -14,12 +14,12 @@ const Contacts = [
             logo: phone,
         },
         {
-            text: 'alsheuskivictor@gmail.com', 
+            text: 'slovostolin@yandex.by', 
             logo: email,
         },
 
         {
-            text: 'Собрания: \nкаждое воскресени в 10:00 и 17:00', 
+            text: 'Собрания: \nкаждое воскресение в 10:00 и 17:00', 
             logo: clock,
         }
 ]

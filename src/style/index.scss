@@ -595,6 +595,7 @@ code {
 .you-description{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: calc(49%);
   padding: 3px;
   > p{
@@ -606,8 +607,7 @@ code {
 }
 
 .description-youtube-instagram{
-  @include d-flex-center();
-  flex-direction: row;
+  display: block;
 }
 
 .questions{

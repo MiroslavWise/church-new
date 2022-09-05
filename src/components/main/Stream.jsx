@@ -2,7 +2,6 @@ import { Title } from 'components'
 import {VideosYouTube} from './modules/YouTubeVideos'
 
 import YouTubeLarge from 'assets/svg/YouTube_Logo_Large.jsx'
-import InstagramLarge from 'assets/svg/Instagram_logo_Large.jsx'
 
 const Stream = () => {
         return(
@@ -16,7 +15,8 @@ const Stream = () => {
                                         <div className="teaching-flex">
                                                 <VideosYouTube />
                                                 <div className='you-description'>
-                                                        <p>
+                                                        <div>
+                                                                <p>
                                                                 На наших служениях мы стараемся преподавать Слово Божье таким образом, чтобы то, что мы проповедуем, созидало, ободряло, 
                                                                 исправляло и приносило благословение тем, кто слушает.
                                                         </p>
@@ -26,11 +26,13 @@ const Stream = () => {
                                                                 Чтобы быть в курсе последних событий, подпишитесь на наши каналы в социальных сетях. Если у вас есть вопросы, пожалуйста, 
                                                                 свяжитесь со служением мультимедиа в нашей церкви. Мы сделаем все возможное, чтобы помочь.
                                                         </p>
-                                                <div className='description-youtube-instagram w-100'>
+                                                        </div>
+                                                        
+                                                <div className='description-youtube-instagram h-100 w-100'>
                                                         <YouTubeLarge />
-                                                        <InstagramLarge />
                                                 </div>
                                                 </div>
+                                                
                                         </div>
                                 </div>
                         </div>

@@ -1,7 +1,7 @@
 import { Greeting } from "./Greeting"
 import { About } from "./About"
 import { Meeting } from "./Meeting"
-import { Teaching } from "./Teaching"
+import { Stream } from "./Stream"
 import { QA } from "./Q&A"
 import { Events } from "./Events"
 import { PastorBlog } from "./PastorBlog"
@@ -13,7 +13,7 @@ export {
         Greeting,
         About,
         Meeting,
-        Teaching,
+        Stream,
         QA,
         Events,
         PastorBlog,

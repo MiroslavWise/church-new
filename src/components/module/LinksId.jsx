@@ -6,7 +6,7 @@ import {ScrollInfoBottom} from 'assets/func'
 const links = [
         {name: 'about_us', link: 'about'},
         {name: 'meetings', link: 'meeting'},
-        {name: 'teaching', link: 'teaching'},
+        {name: 'video_stream', link: 'video_stream'},
         {name: 'questions_answers', link: 'questions'},
         {name: 'events', link: 'events'},
         {name: 'pastor_blog', link: 'blog'},

@@ -2,7 +2,7 @@
 const title = {
         about_us: 'Аб нас',
         meetings: 'Сустрэчы',
-        teaching: 'Вучэнне',
+        video_stream: 'Відэатрансляцыі',
         questions_answers: 'Пытанні і адказы',
         events: 'Мерапрыемства',
 }

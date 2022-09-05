@@ -2,7 +2,7 @@ import {
         Greeting,
         About,
         Meeting,
-        Teaching,
+        Stream,
         QA,
         Events,
         PastorBlog,
@@ -13,12 +13,13 @@ import {
 
 
 const Main = () => {
+
         return(
                 <div className="main_container">
                         <Greeting />
                         <About />
                         <Meeting />
-                        <Teaching />
+                        <Stream />
                         <QA />
                         <Events />
                         <PastorBlog />
@@ -30,3 +31,4 @@ const Main = () => {
 }
 
 export { Main }
+

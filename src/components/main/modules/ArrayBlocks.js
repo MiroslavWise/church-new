@@ -1,3 +1,5 @@
+import {ScrollInfoBottom} from 'assets/func'
+
 import placeholder from 'assets/svg/placeholder.svg'
 import phone from 'assets/svg/phone.svg'
 import email from 'assets/svg/email.svg'
@@ -59,7 +61,7 @@ const questions = [
 
 const contacts = [
         {
-                text: 'г. Столин, \nул. Советская 94Б', 
+                text: <ScrollInfoBottom str={<span>г. Столин, <br/>ул. Советская 94Б</span>} link='map' />, 
                 logo: placeholder,
         },
         {
@@ -71,7 +73,7 @@ const contacts = [
                 logo: email,
         },
         {
-                text: 'Собрания: \nкаждое воскресение в 10:00 и 17:00', 
+                text: <span>Собрания: <br/>каждое воскресение в 10:00 и 17:00</span>, 
                 logo: clock,
         }
 ]

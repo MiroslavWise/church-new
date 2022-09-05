@@ -90,6 +90,22 @@ code {
   @include d-flex-center();
 }
 
+.ytp-watch-later-button, .ytp-button, .ytp-show-watch-later-title{
+  display: none;
+}
+
+.ytp-large-play-button{
+  width: 34px !important;
+  height: 24px !important;
+}
+
+.ytp-big-mode .ytp-chrome-top .ytp-watch-later-button, .ytp-chrome-top .ytp-watch-later-button{
+  display: none !important;
+}
+
+.html5-video-player:not(.ytp-big-mode) .ytp-chrome-top .ytp-share-button{
+  display: none !important;
+}
 .button-more{
   padding: 1em;
   letter-spacing: 0.2em;
@@ -541,6 +557,59 @@ code {
   background-color: $color-w-g;
 }
 
+.teaching-flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-height: 100%;
+  width: 100%;
+}
+
+.youtube-grid{
+  display: grid;
+  grid-template-areas: "a a a" "a a a" "b c d";
+  width: calc(46%  );
+  height: 100%;
+  gap: 10px;
+  aspect-ratio: 16/9;
+}
+
+.you-0{
+  grid-area: a;
+  aspect-ratio: 16/9;
+  margin-bottom: -6px;
+}
+.you-1{
+  grid-area: b;
+  aspect-ratio: 16/9;
+}
+.you-2{
+  grid-area: c;
+  aspect-ratio: 16/9;
+}
+.you-3{
+  grid-area: d;
+  aspect-ratio: 16/9;
+}
+
+.you-description{
+  display: flex;
+  flex-direction: column;
+  width: calc(49%);
+  padding: 3px;
+  > p{
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 26px;
+    color: #535353;
+  }
+}
+
+.description-youtube-instagram{
+  @include d-flex-center();
+  flex-direction: row;
+}
+
 .questions{
   background-attachment: fixed;
   backdrop-filter: blur(30px);
@@ -569,10 +638,10 @@ label {
   &::before, &::after{
     content: "";
     top: 18px;
-    left: -8px;
+    left: -12px;
     position: absolute;
-    width: 12px;
-    height: 3px;
+    width: 18px;
+    height: 4px;
     background: $color-w-g;
     transition: all 0.4s ease-in-out;
   }
@@ -580,7 +649,7 @@ label {
       transform: rotate(90deg);
     }
     &::after{
-    transform: rotate(0deg);
+    transform: rotate(180deg);
     }
 }
 section {

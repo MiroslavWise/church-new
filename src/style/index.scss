@@ -581,15 +581,18 @@ code {
 }
 .you-1{
   grid-area: b;
-  aspect-ratio: 16/9;
 }
 .you-2{
   grid-area: c;
-  aspect-ratio: 16/9;
 }
 .you-3{
   grid-area: d;
-  aspect-ratio: 16/9;
+}
+
+@for $i from 1 through 3 {
+    .you-#{$i}{
+      aspect-ratio: 16/9;
+  }
 }
 
 .you-description{

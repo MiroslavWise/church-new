@@ -1,15 +1,7 @@
 import { Title, ButtonMore } from 'components'
 import { contacts } from './modules/ArrayBlocks'
-import AOS from 'aos'
 
 const Contact = () => {
-
-        AOS.init({
-                offset: 60,
-                delay: 200,
-                duration: 300,
-                easing: 'ease-in-out',
-        })
 
         return(
                 <div className="w-100 contact" id='main-contact'>

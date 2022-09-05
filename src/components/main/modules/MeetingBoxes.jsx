@@ -15,7 +15,7 @@ const MeetingBoxes = ({}) => {
         }
 
         return(
-                <div className="meeting-items-grid">
+                <div className="meeting-items-grid" data-aos="fade-left" data-aos-duration="400">
                         {
                                 itemsMeeting.map(({title, description}, i)=> (
                                         <div className={`item-meeting c-p item-${i+1}`} key={title} onClick={(e)=> {onChange(title, description); e.stopPropagation() }}>

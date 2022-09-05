@@ -592,7 +592,24 @@ code {
 @for $i from 1 through 3 {
     .you-#{$i}{
       aspect-ratio: 16/9;
+      position: relative;
   }
+}
+
+.icon_mini_play{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out ;
+  opacity: 0;
+}
+
+.icon_mini_play_visible{
+  opacity: 1;
+  top: 50%;
 }
 
 .you-description{
@@ -608,6 +625,8 @@ code {
     color: #535353;
   }
 }
+
+
 
 .description-youtube-instagram{
   display: block;

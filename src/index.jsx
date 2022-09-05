@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import AOS from 'aos'
 
 import './style/index.scss';
 import 'aos/dist/aos.css'
@@ -14,6 +15,12 @@ import {ModalMeeting} from 'components/module/ModalMeeting'
 const ModalContext = React.createContext('Function')
 
 const Routing = () => {
+    AOS.init({
+        offset: 30,
+        delay: 50,
+        duration: 300,
+        easing: 'ease-in-out',
+    })
     const [modalVisible, setModalVisible] = useState(false)
     const [infoModal, setInfoModal] = useState({
         title: '',

@@ -12,18 +12,18 @@ const Title = ({name, darkMode}) => {
         //${isInViewport && 'show-title'}
 
         return(
-                <>
+                <div className="title_block">
                         <div 
                                 className={`title`} 
                                 data-aos="fade-up" 
                                 data-aos-duration="450" 
-                                data-aos-offset="60" 
+                                data-aos-offset="160" 
                                 style={{color: darkMode ? DARK_COLOR : LIGHT_COLOR}}
                         >
                                 {t(name)}
                         </div>
                         <div ref={ref} className="title_divider"></div>
-                </>
+                </div>
         )
 }
 

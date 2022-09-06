@@ -640,10 +640,6 @@ code {
 .questions{
   background-attachment: fixed;
   backdrop-filter: blur(30px);
-  .block-content{
-    @include d-flex-center();
-    flex-direction: column;
-  }
   .questions-block-accordion{
     display: flex;
     flex-direction: column;

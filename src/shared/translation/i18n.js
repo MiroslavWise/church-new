@@ -2,8 +2,8 @@ import i18nPlugin from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
-import { ru } from 'shared/languages/ru'
-import { by } from 'shared/languages/by'
+import { ru } from '../languages/ru'
+import { by } from '../languages/by'
 
 export default i18nPlugin
         .use(LanguageDetector)

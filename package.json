@@ -24,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "formatting": "prettier --write \"./**/*.{ts,tsx,d.ts,scss}\""
   },
   "eslintConfig": {
     "extends": [

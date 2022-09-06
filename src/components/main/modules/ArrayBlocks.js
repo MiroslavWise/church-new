@@ -28,13 +28,16 @@ const itemsMeeting = [
         },
         {
                 title: 'Другие встречи', 
-                description: '',
+                description: <div>
+                        <h3>Баня у Васи</h3>
+                        <h3>Встреча у Саши Рыбака</h3>
+                </div>,
         },
 ]
 
 const questions = [
         {
-                title: 'Nie wszystko jasne? ',
+                title: 'Gslskfglkj ',
                 description: 'Tak, jesteśmy wspólnotą chrześcijańską działającą w ramach Kościoła Chrystusowego w RP (www.chrystusowi.pl). Działamy w ramach obowiązującego w Polsce prawa – ustawy z dnia 17 maja 1989 r. o gwarancjach wolności sumienia i wyznania (Dz. U. z 2005 r. Nr 231, poz. 1965 z późn.zm.). Zasady naszej działalności są określone w Statucie.'
         },
         {

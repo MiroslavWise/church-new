@@ -4,8 +4,8 @@
 
 Затем установить зависимости
 
-```npm i``` || ```npm install```
+``` npm i ``` || ``` npm install ```
 
 Запустить проект
 
-```npm start```
+``` npm start ```

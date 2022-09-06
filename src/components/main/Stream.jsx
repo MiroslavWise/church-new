@@ -4,6 +4,7 @@ import {VideosYouTube} from './modules/YouTubeVideos'
 import YouTubeLarge from 'assets/svg/YouTube_Logo_Large.jsx'
 
 const Stream = () => {
+
         return(
                 <div className="w-100 teaching b-d-f-c" id='main-video_stream'>
                         <div className="block w-100">

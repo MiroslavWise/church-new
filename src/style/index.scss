@@ -206,7 +206,7 @@ code {
   top: 0;
   left: 0;
   z-index: 999;
-  transition: all 0.3s ease-in-out 3ms;
+  transition: all 0.3s ease-in-out ;
   border-bottom: 1px solid rgba($color-w-g, 0.2);
   position:fixed;
   @include d-flex-center();
@@ -252,7 +252,7 @@ code {
     opacity: 0.9;
   }
   to {
-    opacity: 0.5;
+    opacity: 0.7;
   }
 }
 
@@ -262,6 +262,7 @@ code {
 
 .item_social{
   color: rgba(white, 0.8);
+  transition: all 0.4s ease-in-out;
   &:hover{
     animation: opac 0.3s ease-in-out;
     opacity: 0.5;
@@ -657,14 +658,15 @@ label {
   background: transparent;
   color: white;
   padding: .5em;
+  padding-left: 1.1em;
   &::before, &::after{
     content: "";
     top: 18px;
-    left: -12px;
+    left: -16px;
     position: absolute;
     width: 18px;
     height: 4px;
-    background: $color-w-g;
+    background: $color-yellow;
     transition: all 0.4s ease-in-out;
   }
     &::before{

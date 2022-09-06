@@ -7,11 +7,19 @@ const LIGHT_COLOR = '#FFFFFF';
 const Title = ({name, darkMode}) => {
         const {t} = useTranslation()
         const ref = useRef(null);
-        const isInViewport = useIsInViewport(ref);
+        // const isInViewport = useIsInViewport(ref);
+
+        //${isInViewport && 'show-title'}
 
         return(
                 <>
-                        <div className={`title ${isInViewport && 'show-title'}`} style={{color: darkMode ? DARK_COLOR : LIGHT_COLOR}}>
+                        <div 
+                                className={`title`} 
+                                data-aos="fade-up" 
+                                data-aos-duration="450" 
+                                data-aos-offset="60" 
+                                style={{color: darkMode ? DARK_COLOR : LIGHT_COLOR}}
+                        >
                                 {t(name)}
                         </div>
                         <div ref={ref} className="title_divider"></div>
@@ -19,25 +27,25 @@ const Title = ({name, darkMode}) => {
         )
 }
 
-function useIsInViewport(ref) {
-        const [isIntersecting, setIsIntersecting] = useState(false);
+// function useIsInViewport(ref) {
+//         const [isIntersecting, setIsIntersecting] = useState(false);
 
-        const observer = useMemo(
-                () =>
-                        new IntersectionObserver(([entry]) =>
-                        setIsIntersecting(entry.isIntersecting),
-                ),
-                [],
-        );
+//         const observer = useMemo(
+//                 () =>
+//                         new IntersectionObserver(([entry]) =>
+//                         setIsIntersecting(entry.isIntersecting),
+//                 ),
+//                 [],
+//         );
 
-        useEffect(() => {
-                        observer.observe(ref.current);
-                        return () => { observer.disconnect(); };
-                }, 
-                [ref, observer]
-        );
+//         useEffect(() => {
+//                         observer.observe(ref.current);
+//                         return () => { observer.disconnect(); };
+//                 }, 
+//                 [ref, observer]
+//         );
 
-        return isIntersecting;
-}
+//         return isIntersecting;
+// }
 
 export {Title}

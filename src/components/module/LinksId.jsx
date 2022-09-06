@@ -9,8 +9,8 @@ const links = [
         {name: 'video_stream', link: 'video_stream'},
         {name: 'questions_answers', link: 'questions'},
         {name: 'events', link: 'events'},
-        {name: 'pastor_blog', link: 'blog'},
-        {name: 'support', link: 'support'},
+        // {name: 'pastor_blog', link: 'blog'},
+        // {name: 'support', link: 'support'},
         {name: 'contact', link: 'contact'},
 ]
 

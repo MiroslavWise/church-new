@@ -5,8 +5,8 @@ import {
         Stream,
         QA,
         Events,
-        PastorBlog,
-        Support,
+        // PastorBlog,
+        // Support,
         Maps,
         Contact
 } from 'components/main'
@@ -22,8 +22,8 @@ const Main = () => {
                         <Stream />
                         <QA />
                         <Events />
-                        <PastorBlog />
-                        <Support />
+                        {/* <PastorBlog />
+                        <Support /> */}
                         <Contact />
                         <Maps />
                 </div>

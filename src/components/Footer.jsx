@@ -1,3 +1,4 @@
+import moment from 'moment/moment'
 import {SocialMedia} from './module/SocialMedia'
 
 const Footer = () => {
@@ -6,7 +7,7 @@ const Footer = () => {
                 <div className="footer">
                         <div className="footer-inner">
                                 <div className="footer-name m-l-1">
-                                        © 2022 Церковь Слово Жизни г. Столин
+                                        © {moment().format('YYYY')} Церковь Слово Жизни г. Столин
                                 </div>
                                 <div className="footer-social">
                                         <SocialMedia />

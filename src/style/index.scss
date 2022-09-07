@@ -410,7 +410,7 @@ code {
   letter-spacing: -0.5px;
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.7s ease-in-out 0.2s;
+  transition: all 0.6s ease-in-out 0.2s;
 }
 
 .title_block{
@@ -516,22 +516,32 @@ code {
   position:fixed;
   top: 0;
   left: 0;
+  opacity: 0;
+  visibility: hidden;
   background-color: rgba(#000, 0.7);
   width: 100vw;
   height: 100%;
   z-index: 1000;
+  transition: all 0.4s ease-in-out;
+}
+
+.dimming_visible{
+  visibility:visible;
+  opacity: 1;
 }
 
 .modal-meeting{
+  @include d-flex-center();
+  flex-direction: column;
   position:fixed;
   top: 50%;
   left: 50%;
-  display: none;
+  visibility: hidden;
   opacity: 0;
   width: 75%;
   height: 300px;
-  background-color: $color-prime;
-  transform: translate(-50%, -100%);
+  background-color: #0c8f7f;
+  transform: translate(-50%, -250%);
   transition: all 0.4s ease-in-out;
   z-index: 1000;
   .modal-title{
@@ -553,8 +563,8 @@ code {
   }
 }
 .modal-visible{
-  @include d-flex-center();
-  flex-direction: column;
+  visibility:visible;
+  transform: translate(-50%, -100%);
   opacity: 1;
 }
 
@@ -645,6 +655,12 @@ code {
     flex-direction: column;
     justify-items: start;
   }
+}
+
+.questions_description{
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
 }
 
 input[type="checkbox"] {
@@ -738,7 +754,7 @@ section {
   width: 100%; 
   height: 400px;
   position: absolute; 
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.7); 
   z-index: 100; 
   pointer-events: none;
   opacity: 0;
@@ -756,7 +772,7 @@ section {
 }
 
 .map-ctrl-display-effect{
-  animation: map-opacity-animation 1.5s ease-in-out; 
+  animation: map-opacity-animation 1.8s ease-in-out; 
   pointer-events: none;
 }
 @keyframes map-opacity-animation {
@@ -775,7 +791,7 @@ section {
 }
 
 .contact-items{
-  margin: 3.8em 5em;
+  margin: 3.8rem 5rem;
 }
 .contact-items-grid{
   display: grid;
@@ -793,5 +809,5 @@ section {
 
 .contact-item-logo{
   height: 55px;
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }

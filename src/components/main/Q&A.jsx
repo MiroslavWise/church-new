@@ -10,7 +10,9 @@ const QA = () => {
                                                 name={'questions_answers'}
                                                 darkMode={false}
                                         />
-                                        <p className='color-w-g' style={{fontSize: 18, fontWeight: 200}}>Не все так однозначно? Мы понимаем это, поэтому подготовили ответы на часто задаваемые вопросы.</p>
+                                        <div className='questions_description'>
+                                                <p className='color-w-g' style={{fontSize: 18, fontWeight: 200}}>Не все так однозначно? Мы понимаем это, поэтому подготовили ответы на часто задаваемые вопросы.</p>
+                                        </div>
                                         <Accordion />
                                 </div>
                         </div>

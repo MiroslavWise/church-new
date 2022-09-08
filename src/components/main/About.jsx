@@ -30,9 +30,7 @@ const About = () => {
                                                 title={'Подробнее'}
                                         />
                                 </div>
-
                         </div>
-
                 </div>
         )
 }

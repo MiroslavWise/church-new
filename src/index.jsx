@@ -41,7 +41,7 @@ const Routing = () => {
                         <Routes>
                             <Route path="/" element={<Main />} index/>
                             {
-                                maps
+                                maps()
                             }
                         </Routes>
                     </div>

@@ -3,5 +3,5 @@ import {
 } from 'page'
 
 export const Routings = [
-        {element: About, path: '/about'},
+        {element: <About />, path: '/about'},
 ]

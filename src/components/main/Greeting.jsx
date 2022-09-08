@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import {ButtonMore} from 'components'
+import { ButtonMore } from 'components'
 
 const Greeting = () => {
         const [loaded, setScale] = useState(false);
@@ -17,6 +17,7 @@ const Greeting = () => {
                                 <ButtonMore 
                                         className={`greet-button m-t-5 ${loaded && 'show-opacity'}`}
                                         title={'Больше, чем церковь'}
+                                        link = {"/about"}
                                 />
                         </div>
                         

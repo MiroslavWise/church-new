@@ -852,3 +852,19 @@ section {
   margin: 50px auto;
   padding: 50px 10px 40px;
 }
+
+
+
+
+
+
+.not_visible{
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.7s ease;
+}
+
+.visible{
+  visibility: visible;
+  opacity: 1;
+}

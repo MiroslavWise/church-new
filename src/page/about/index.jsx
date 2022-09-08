@@ -1,9 +1,14 @@
+import { useState, useEffect } from 'react'
 import { ButtonMore } from 'components'
 
 const About = () => {
+        const [visibility, setVisibility] = useState(false)
+        useEffect(() => {
+                setVisibility(true)
+        }, [])
 
         return(
-                <div className = "about_container"  >
+                <div className={`about_container not_visible ${visibility && "visible"}`}>
                         <div className = "bg_about_page_title about_image">
                                 <h1 className="h1-about">Больше, чем церковь</h1>
                         </div>

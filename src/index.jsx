@@ -31,7 +31,7 @@ const Routing = () => {
 
     useLayoutEffect(() => {
         console.log(`main-questions`, document.getElementById(`main-questions`).offsetTop)
-        BehaviorLinks = links.map(({ link }) => (
+        BehaviorLinks = [...links].map(({ link }) => (
             document.getElementById(`t${link}`).addEventListener('click', () => {
                 window.scroll({ top: document.getElementById(`main-${link}`).offsetTop - 59, behavior: 'smooth' });
             })

@@ -869,13 +869,24 @@ section {
   opacity: 1;
 }
 
+.react-calendar__month-view__days{
+  display: grid;
+  grid-template-columns: repeat(7, 15px);
+}
+
 .calendar-tile {
   background-color: white;
   border: none;
-}
-.calendar-tile:hover {
-  background-color: rgba(134, 128, 128, 0.593);
   border-radius: 50%;
+  width: 12px;
+  aspect-ratio: 1;
+  &:hover{
+    background-color: rgba(134, 128, 128, 0.193);
+  }
+}
+
+.react-calendar__month-view__days__day--neighboringMonth{
+  visibility: hidden;
 }
 
 .mec-calendar {

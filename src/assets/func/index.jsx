@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
-const ScrollTop = (alt = -20) => {
+
+
+
+
+
+const ScrollTop = (alt = 0) => {
         window.requestAnimationFrame(() => {
-                document.documentElement.scrollTop = alt
+                window.scroll({ top: 0, behavior: 'smooth' });
         })
-        
 }
 
 const ScrollLink = styled.a`

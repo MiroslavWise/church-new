@@ -3,14 +3,12 @@ import { useTranslation } from 'react-i18next'
 
 import {ScrollInfoBottom} from 'assets/func'
 
-const links = [
+export const links = [
         {name: 'about_us', link: 'about'},
         {name: 'meetings', link: 'meeting'},
         {name: 'video_stream', link: 'video_stream'},
         {name: 'questions_answers', link: 'questions'},
         {name: 'events', link: 'events'},
-        // {name: 'pastor_blog', link: 'blog'},
-        // {name: 'support', link: 'support'},
         {name: 'contact', link: 'contact'},
 ]
 
@@ -24,7 +22,9 @@ const LinksId = () => {
                                 links.map(({name, link}, i) => (
                                         <div className="item-nav-link" key={link}>
                                                 <div className="c-p text-nav" onClick={()=>{navigate('/')}}>
-                                                        <ScrollInfoBottom link={link} str={t(name).toUpperCase()}/>
+                                                        <ScrollInfoBottom link={link} str={t(name).toUpperCase()
+                                                        }
+                                                        />
                                                 </div>
                                                 {
                                                         i !== links.length -1

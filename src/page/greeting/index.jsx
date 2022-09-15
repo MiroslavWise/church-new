@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { ButtonMore } from 'components'
 import {Pp10} from 'assets/func'
 
-const About = () => {
+const Greeting = () => {
         const [visibility, setVisibility] = useState(false)
         useEffect(() => {
                 setVisibility(true)
@@ -52,4 +52,4 @@ const About = () => {
         )
 }
 
-export {About}
+export {Greeting}

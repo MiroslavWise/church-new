@@ -17,7 +17,7 @@ const Greeting = () => {
                                 <ButtonMore 
                                         className={`greet-button m-t-5 ${loaded && 'show-opacity'}`}
                                         title={'Важно знать'}
-                                        link = {"/about"}
+                                        link = {"/greeting"}
                                 />
                         </div>
                         

@@ -23,3 +23,23 @@
         background-size: cover;
         background-position-y: 35%;
 }
+
+.picture_left{
+        background: url('../assets/picture/about-page/cross.jpg');
+        padding-top: 130px;
+        padding-bottom: 130px;
+        background-position-y:22%;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+}
+
+.picture_right{
+        background: url('../assets/picture/about-page/right.jpg');
+        padding-top: 130px;
+        padding-bottom: 130px;
+        background-position-y: 25%;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+}

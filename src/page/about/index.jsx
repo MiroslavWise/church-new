@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { ButtonMore } from 'components'
 import { AboutLinks } from 'components/about/AboutLinks'
+import {SmallInfo} from 'components/about/SmallInfo'
 
 
 
@@ -15,6 +16,7 @@ const About = () => {
                                 <h1 className="h1-about _h1">О нас</h1>
                         </div>
                         <AboutLinks />
+                        <SmallInfo />
                 </div>
         )
 }

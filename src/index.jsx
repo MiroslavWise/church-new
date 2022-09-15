@@ -32,15 +32,17 @@ const Routing = () => {
     })
 
     useLayoutEffect(() => {
-        console.log(`main-questions`, document.getElementById(`main-questions`).offsetTop)
+        console.log(`main-questions`, document?.getElementById(`main-questions`)?.offsetTop)
         BehaviorLinks = links.map(({ link }) => (
-            document.getElementById(`t${link}`).addEventListener('click', () => {
-                window.scroll({ top: document.getElementById(`main-${link}`).offsetTop - 59, behavior: 'smooth' });
+            document?.getElementById(`t${link}`).addEventListener('click', () => {
+                requestAnimationFrame(
+                    window?.scroll({ top: document?.getElementById(`main-${link}`)?.offsetTop - 59, behavior: 'smooth' })
+                )
             })
         ))
         //     .concat(aboutLinks.map(({ link }) => (
         //     document.getElementById(`t${link}`).addEventListener('click', () => {
-        //         window.scroll({ top: document.getElementById(`main-${link}`).offsetTop - 59, behavior: 'smooth' });
+        //         window.scroll({ top: document.getElementById(`-${link}`).offsetTop - 59, behavior: 'smooth' });
         //     })
         // )))
     }, [])

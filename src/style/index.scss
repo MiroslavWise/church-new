@@ -8,6 +8,7 @@ $color-secondary: #3b3d4a;
 $color-yellow: #db9327;
 $color-w-g: #fdfdfd;
 $max-1507: 1507px;
+$color-prime-two: #0c8f7f;
 
 *{
   scroll-padding-top: 59px !important;
@@ -44,6 +45,9 @@ h3{
 h4{
   font-size: 20px;
   font-weight: 400;
+}
+a{
+  text-decoration: none;
 }
 
 button{
@@ -886,11 +890,76 @@ section {
 }
 
 .about_links_container{
-  height: 274px;
-  background-color: #8b8b8b;
+  height: 194px;
+  background-color: #615f5f;
   padding-top: 40px;
   padding-bottom: 40px;
   @include d-flex-center();
+  .block-content_{
+    max-width: 1160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    h6{
+      text-align: center;
+      font-size: 24px !important;
+      font-weight: 500 !important;
+      color: #fff !important;
+      line-height: 38px !important;
+    }
+  }
+}
+
+.about_links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 96%;
+}
+
+.link_about{
+    width: 218px;
+    height: 42px;
+    border: 3px solid $color-yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+    span{
+      color: $color-w-g;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    &:hover{
+        background-color: $color-prime;
+        border-color: $color-prime-two;
+    }
+}
+
+.about_small_info_container{
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  width: 100%;
+}
+
+.about_small_item{
+  background-color: #0c8f7f;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  .about_small_text{
+    margin-top: 30px;
+    margin-bottom: 40px;
+    text-align: left;
+    padding: 5% 10%;
+    > h5 {
+      font-weight: 400 !important;
+      font-size: 18px !important;
+      color: $color-w-g;
+    }
+  }
 }

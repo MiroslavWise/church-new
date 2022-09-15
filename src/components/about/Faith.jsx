@@ -4,7 +4,7 @@ import { FaithAnswer } from './module/FaithAnswer'
 export const Faith = () => {
 
         return (
-                <div className="about_faith_container w-100" id="-faith">
+                <div className="about_faith_container w-100" id="a-faith">
                         <div className="block_content_about">
                                 <Title className="about-title"
                                         name='во что мы верим'

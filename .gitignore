@@ -13,6 +13,7 @@
 .history
 /history
 history
+.vscode
 
 # misc
 .DS_Store

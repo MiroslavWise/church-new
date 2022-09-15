@@ -9,6 +9,10 @@ $color-yellow: #db9327;
 $color-w-g: #fdfdfd;
 $max-1507: 1507px;
 
+*{
+  scroll-padding-top: 59px !important;
+}
+
 @mixin d-flex-center() {
   display: flex;
   justify-content: center;
@@ -47,18 +51,21 @@ button{
 }
 
 html{
-  scroll-padding-top: 59px;
-  --webkit-scroll-behavior: smooth;
+  scroll-padding-top: 59px !important;
 }
 
 body {
   margin: 0;
+  scroll-padding-top: 59px !important;
+  --webkit-scroll-padding-top: 59px !important;
+  --moz-osx-scroll-padding-top: 59px !important;
+  scroll-padding-top: 59px !important;
   font-family: 'Poppins', serif;
   font-family: 'Poppins', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
   --webkit-scroll-behavior: smooth;
-  -moz-osx-scroll-behavior: smooth;
+  --moz-osx-scroll-behavior: smooth;
   overflow: overlay;
 }
 

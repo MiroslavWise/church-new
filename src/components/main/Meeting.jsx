@@ -22,7 +22,6 @@ const Meeting = () => {
                                 <div className="block-content">
                                         <Title 
                                                 name={'meetings'}
-                                                darkMode={false}
                                         />
                                         <div className="meeting-flex">
                                                 <div class="sunday-service c-p" onClick={(e)=> {onChange(); e.stopPropagation() }} data-aos="fade-right" data-aos-duration="400">

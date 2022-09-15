@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { ButtonMore } from 'components'
-import { AboutLinks } from 'components/about/AboutLinks'
-import {SmallInfo} from 'components/about/SmallInfo'
+import { AboutLinks, Pastors, SmallInfo, Faith } from 'components/about'
 
 
 
@@ -17,6 +16,8 @@ const About = () => {
                         </div>
                         <AboutLinks />
                         <SmallInfo />
+                        <Pastors />
+                        <Faith />
                 </div>
         )
 }

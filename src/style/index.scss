@@ -239,6 +239,9 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  @media (max-width: 1065px) {
+    display: none;
+  }
 }
 
 .item-nav-link{
@@ -392,14 +395,17 @@ code {
 .about-block {
   background-color: $color-w-g;
   background-attachment: scroll;
-  .text-p{
-    @include d-flex-center();
-    p{
-      text-align: center;
-    }
-  }
   h4 {
     @include d-flex-center();
+  }
+}
+.text-p{
+  @include d-flex-center();
+  p{
+    text-align: center;
+    font-weight: 300 !important;
+    font-size: 16px !important;
+    line-height: 26px !important;
   }
 }
 
@@ -890,7 +896,7 @@ section {
 }
 
 .about_links_container{
-  height: 194px;
+  min-height: 194px;
   background-color: #615f5f;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -913,14 +919,26 @@ section {
 }
 
 .about_links{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns:  repeat(4, 20%);
+  justify-content:space-around ;
   width: 96%;
+  @media (max-width: 1200px) {
+    grid-template-columns:  repeat(2, 40%);
+    grid-template-rows: repeat(2, 40%);
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+  }
+  @media (max-width: 720px){
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 .link_about{
-    width: 218px;
     height: 42px;
     border: 3px solid $color-yellow;
     display: flex;
@@ -928,6 +946,9 @@ section {
     align-items: center;
     background-color: transparent;
     transition: all 0.3s ease-in-out;
+    @media (max-width: 1200px) {
+      // width: 40%;
+    }
     span{
       color: $color-w-g;
       font-size: 15px;
@@ -937,6 +958,9 @@ section {
     &:hover{
         background-color: $color-prime;
         border-color: $color-prime-two;
+    }
+    @media (max-width: 720px){
+      width: 50%;
     }
 }
 
@@ -962,4 +986,19 @@ section {
       color: $color-w-g;
     }
   }
+}
+
+.about_pastors_container{
+
+}
+
+.block_content_about{
+  max-width: 85%;
+  flex-direction: column;
+  margin: 3em auto;
+}
+
+.faith_items{
+  max-width: 95%; 
+  color:#fdfdfd;
 }

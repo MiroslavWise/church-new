@@ -8,7 +8,6 @@ const QA = () => {
                                 <div className="block-content">
                                         <Title 
                                                 name={'questions_answers'}
-                                                darkMode={false}
                                         />
                                         <div className='questions_description'>
                                                 <p className='color-w-g' style={{fontSize: 18, fontWeight: 200}}>Не все так однозначно? Мы понимаем это, поэтому подготовили ответы на часто задаваемые вопросы.</p>

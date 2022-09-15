@@ -50,6 +50,10 @@ button{
   cursor: pointer;
 }
 
+abbr[title]{
+  text-decoration: none;
+}
+
 html{
   scroll-padding-top: 59px !important;
 }

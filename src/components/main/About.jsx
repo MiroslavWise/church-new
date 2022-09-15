@@ -28,6 +28,7 @@ const About = () => {
                                         <ButtonMore
                                                 className='button-n-hover'
                                                 title={'Подробнее'}
+                                                link='/about'
                                         />
                                 </div>
                         </div>

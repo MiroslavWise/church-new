@@ -1,7 +1,7 @@
 import {
-        About
+        Greeting
 } from 'page'
 
 export const Routings = [
-        {element: <About />, path: '/about'},
+        {element: <Greeting />, path: '/greeting'},
 ]

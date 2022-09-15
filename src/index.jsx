@@ -2,6 +2,7 @@ import React, { useState, useLayoutEffect } from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import AOS from 'aos'
+import smoothscroll from 'smoothscroll-polyfill';
 
 import './style/index.scss';
 import 'aos/dist/aos.css'
@@ -11,8 +12,9 @@ import { Header, Footer } from 'components'
 import { Main } from 'page'
 import { maps } from 'routes/mapping'
 import { ModalMeeting } from 'components/module/ModalMeeting'
-import smoothscroll from 'smoothscroll-polyfill';
+
 import { links } from 'components/module/LinksId'
+import {aboutLinks} from 'components/about/AboutLinks'
 window.__forceSmoothScrollPolyfill__ = true;
 smoothscroll.polyfill()
 let BehaviorLinks;
@@ -31,11 +33,16 @@ const Routing = () => {
 
     useLayoutEffect(() => {
         console.log(`main-questions`, document.getElementById(`main-questions`).offsetTop)
-        BehaviorLinks = [...links].map(({ link }) => (
+        BehaviorLinks = links.map(({ link }) => (
             document.getElementById(`t${link}`).addEventListener('click', () => {
                 window.scroll({ top: document.getElementById(`main-${link}`).offsetTop - 59, behavior: 'smooth' });
             })
         ))
+        //     .concat(aboutLinks.map(({ link }) => (
+        //     document.getElementById(`t${link}`).addEventListener('click', () => {
+        //         window.scroll({ top: document.getElementById(`main-${link}`).offsetTop - 59, behavior: 'smooth' });
+        //     })
+        // )))
     }, [])
 
     const [modalVisible, setModalVisible] = useState(false)

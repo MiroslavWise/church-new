@@ -38,11 +38,11 @@ const Events = () => {
         // getEvents(CALENDAR_ID, API_KEY);
 
 
-        return(
+        return (
                 <div className="w-100 events b-d-f-c" id='main-events'>
                         <div className="block w-100">
                                 <div className="block-content">
-                                        <Title 
+                                        <Title
                                                 name={'events'}
                                                 darkMode
                                         />
@@ -50,9 +50,9 @@ const Events = () => {
                                                 <div className="mec-calendar-topsec">
                                                         <div className="mec-calendar-side mec-clear">
                                                                 <div>
-                                                                        <Calendar 
-                                                                                onChange={onChange} 
-                                                                                value={value} 
+                                                                        <Calendar
+                                                                                onChange={onChange}
+                                                                                value={value}
                                                                                 onClick={onClick}
                                                                                 // tileContent={tileContent}
                                                                                 tileClassName={tileClassName}
@@ -69,13 +69,6 @@ const Events = () => {
                 </div>
         )
 
-        // return (
-        //         <FullCalendar
-        //           plugins={[dayGridPlugin]}
-        //           initialView="dayGridMonth"
-        //           events={events}
-        //         />
-        //     );
 }
 
 const onClick = (value) => { 
@@ -121,82 +114,6 @@ const getEvents = (calendarID, apiKey) => {
       
       };
 
-
-// const handleClientLoad = () => {
-//         window.gapi.load("client:auth2", initClient);
-//       };
-
-
-// const openSignInPopup = () => {
-//         window.gapi.auth2.authorize(
-//                    { client_id: CLIENT_ID, scope: SCOPES },
-//                    (res) => {
-//                      if (res) {
-//                        if (res.access_token)
-//                          localStorage.setItem("access_token", res.access_token);
-     
-//                        // Load calendar events after authentication
-//                        window.gapi.client.load("calendar", "v3", listUpcomingEvents);
-//                      }
-//                    }
-//                  );
-//      }  
-     
-//      const initClient = () => {
-//          if (!localStorage.getItem("access_token")) {
-//            openSignInPopup();
-//          } else {
-//            // Get events if access token is found without sign in popup
-//            fetch(
-//           `https://www.googleapis.com/calendar/v3/calendars/primary/events?key=${API_KEY}&orderBy=startTime&singleEvents=true`,
-//              {
-//                headers: {
-//                  Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-//                },
-//              }
-//            )
-//              .then((res) => {
-//                // Check if unauthorized status code is return open sign in popup
-//                if (res.status !== 401) {
-//                  return res.json();
-//                } else {
-//                  localStorage.removeItem("access_token");
-     
-//                  openSignInPopup();
-//                }
-//              })
-//              .then((data) => {
-//                if (data?.items) {
-//                  setEvents(formatEvents(data.items));
-//                }
-//              });
-//          }
-//        };
-
-//        const listUpcomingEvents = () => {
-//         window.gapi.client.calendar.events
-//           .list({
-//             // Fetch events from user's primary calendar
-//             calendarId: "primary",
-//             showDeleted: true,
-//             singleEvents: true,
-//           })
-//           .then(function (response) {
-//             let events = response.result.items;
-    
-//             if (events.length > 0) {
-//               setEvents(formatEvents(events));
-//             }
-//           });
-//       };
-
-//       const formatEvents = (list) => {
-//         return list.map((item) => ({
-//           title: item.summary,
-//           start: item.start.dateTime || item.start.date,
-//           end: item.end.dateTime || item.end.date,
-//         }));
-//       };
      
 
 export {Events}

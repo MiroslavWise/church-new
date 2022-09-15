@@ -860,11 +860,6 @@ section {
   padding: 50px 10px 40px;
 }
 
-
-
-
-
-
 .not_visible{
   visibility: hidden;
   opacity: 0;
@@ -885,15 +880,31 @@ section {
   background-color: white;
   border: none;
   border-radius: 50%;
-  width: 12px;
+  width: 15px;
   aspect-ratio: 1;
-  &:hover{
-    background-color: rgba(134, 128, 128, 0.193);
-  }
+  &:hover:not(.mec-has-event) {
+    background-color: rgba(142, 138, 138, 0.1);
+  } 
+  &.mec-has-event:hover {
+    background-color: rgba(12, 143, 127, 1);
+  } 
 }
 
 .react-calendar__month-view__days__day--neighboringMonth{
   visibility: hidden;
+}
+.react-calendar__navigation {
+  display: none;
+}
+.react-calendar__month-view__weekdays__weekday{
+  font-weight: 700;
+  text-decoration: none;
+  &:after {
+    text-decoration: none;
+  }
+  &:before {
+    text-decoration: none;
+  }
 }
 
 .mec-calendar {
@@ -904,13 +915,12 @@ section {
 }
 
 .mec-calendar .mec-calendar-topsec {
-  display: table;
   background: #fff;
 }
 .mec-calendar .mec-calendar-side {
   width: 55%;
   display: table-cell;
-  padding: 40px;
+  padding: 35px;
   position: relative;
   text-align: center;
   box-shadow: 0 1px 5px 6px #000000 / 1% inset;
@@ -925,33 +935,24 @@ section {
   display: table-cell;
   height: 100%;
   border-left: 1px solid #efefef;
-  padding: 40px;
-  width: 45%;
+  padding: 35px;
+  width: 100%;
 }
 
-// .mec-calendar .mec-has-event {
-//   cursor: pointer;
-//   display: block;
-//   width: 100%;
-//   height: 100%;
-//   border-radius: 50%;
-//   color: #4d4d4d;
-//   transition: all .25s ease;
-//   text-decoration: none;
-//   box-shadow: none;
-// }
+.mec-has-event:after {
+  background-color: rgba(219, 147, 39, 0.9);
+  border-radius: 50%;
+  display: block;
+  content: "";
+  width: 7px;
+  aspect-ratio: 1;
+  margin: -4px 0 0 -4px;
+  transition: all .1s ease;
+  position: relative;
+  top: 15%;
+  left: 50%;
+}
 
-
-.calendar-tile:after {
-  // background-color: #db9327;
-  // border-radius: 50%;
-  // display: block;
-  // content: "";
-  // width: 8px;
-  // height: 8px;
-  // bottom: 14px;
-  // left: 50%;
-  // margin: -4px 0 0 -4px;
-  // position: absolute;
-  // transition: all .25s ease;
+.mec-has-event:hover::after {
+  background-color: rgba(255, 255, 255, 1);
 }

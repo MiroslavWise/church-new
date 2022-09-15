@@ -1,7 +1,7 @@
-import {ButtonAboutScrollPage} from './ButtonAboutScrollPage'
+import {ButtonAboutScrollPage} from './module/ButtonAboutScrollPage'
 export const aboutLinks = [
         {name: 'Пастора', link: '',},
-        {name: 'Наша вера', link: '',},
+        {name: 'Наша вера', link: 'faith',},
         {name: 'Наша цель', link: '',},
         {name: 'История', link: '',}
 ]

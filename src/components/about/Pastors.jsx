@@ -1,19 +1,15 @@
-import { Title, ButtonMore } from 'components'
+import { Title } from 'components'
 
-const About = () => {
+export const Pastors = () => {
 
-        return(
-                <div 
-                        className="block about-block w-100 b-d-f-c"
-                        id="main-about"
-                >
-                        <div className="block-content">
+        return (
+                <div className="about_pastors_container w-100">
+                        <div className="block_content_about">
                                 <Title className="about-title"
-                                        name='about_us'
+                                        name='пастора и лидеры'
                                         darkMode
-                                />      
-                                <h4 className='p-t-2 m-b-3'>Мы рады, что вы с нами!</h4>
-                                <div className='text-p m-b-5'>
+                                />
+                                <div className='text-p m-b-4 m-t-4'>
                                         <p>
                                                 Церковь «Слово Жизни» в Столине – это евангельская христианская 
                                                 община, открытая для всех и для многих поколений. Евангельские 
@@ -24,16 +20,7 @@ const About = () => {
                                                 мы, во что мы верим и какова наша история, нажмите ниже.
                                         </p>
                                 </div>
-                                <div className="button-more-wrapper">
-                                        <ButtonMore
-                                                className='button-n-hover'
-                                                title={'Подробнее'}
-                                                link='/about'
-                                        />
-                                </div>
                         </div>
                 </div>
         )
 }
-
-export {About}

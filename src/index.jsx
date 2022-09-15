@@ -40,11 +40,11 @@ const Routing = () => {
                 )
             })
         ))
-        //     .concat(aboutLinks.map(({ link }) => (
-        //     document.getElementById(`t${link}`).addEventListener('click', () => {
-        //         window.scroll({ top: document.getElementById(`-${link}`).offsetTop - 59, behavior: 'smooth' });
-        //     })
-        // )))
+            .concat(aboutLinks.map(({ link }) => (
+            document?.getElementById(`t${link}`)?.addEventListener('click', () => {
+                window?.scroll({ top: document?.getElementById(`-${link}`).offsetTop - 59, behavior: 'smooth' });
+            })
+        )))
     }, [])
 
     const [modalVisible, setModalVisible] = useState(false)

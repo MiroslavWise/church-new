@@ -10,10 +10,10 @@ const Greeting = () => {
 
         return(
                 <div className={`about_container not_visible ${visibility && "visible"}`}>
-                        <div className = "bg_about_page_title about_image">
+                        <div className = "bg_greeting_page_title greeting_image">
                                 <h1 className="h1-about">Больше, чем церковь</h1>
                         </div>
-                        <div className="block-content about_description">
+                        <div className="block-content greeting_description">
                                 <p><Pp10/>
                                         Церковь «Слово Жизни» в Столине существует благодаря Евангелию - доброй вести о спасении через Иисуса Христа. 
                                         Что такое Евангелие? Ответ на этот вопрос мы можем найти в Библии.

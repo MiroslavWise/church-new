@@ -1,42 +1,105 @@
 import { Title } from 'components'
-import { useState, useCallback, useEffect } from 'react'
-// import FullCalendar from "@fullcalendar/react";
-// import dayGridPlugin from "@fullcalendar/daygrid";
+import { useState, useEffect } from 'react'
 import { gapi } from "gapi-script";
+import { EventList } from './modules/EventList'
 import Calendar from 'react-calendar'
-// import 'react-calendar/dist/Calendar.css';
+import moment from 'moment';
+import 'moment/min/locales'
 
 const API_KEY = 'AIzaSyDktjq1a-FP0eQPcC2vXGbKs6SAiIg-qY0';
 const CALENDAR_ID = 'alsheuskivictor@gmail.com';
-const SCOPES =
-  "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar.events https://www.googleapis.com/auth/calendar";
-
+const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
 
 
 const Events = () => {
+        const [currentState, setCurrentState] = useState(getCurrentDateState(moment()._d,true));
+        const [gapiLoaded, setGapiLoaded] = useState(false);
+        const [monthToEvents, setMonthToEvents] = useState({});
+        const [events, setEvents] = useState([]);
+        console.log('events',events);
+        
+        useEffect(() => {
+                loadGapi();
+        }, []);
 
-        const [value, setValue] = useState(new Date());
-        const onChange = (nextValue) => { 
-                console.log('onChange : nextValue', nextValue)
-                // setValue(nextValue);
-              }
-        // const [events, setEvents] = useState(null);
+        moment.locale('ru');
 
-        // useEffect(() => {
-        //   const script = document.createElement("script");
-        //   script.async = true;
-        //   script.defer = true;
-        //   script.src = "https://apis.google.com/js/api.js";
-      
-        //   document.body.appendChild(script);
-      
-        //   script.addEventListener("load", () => {
-        //     if (window.gapi) handleClientLoad();
-        //   });
-        // }, []);
 
-        // getEvents(CALENDAR_ID, API_KEY);
+        useEffect(() => {
+                if (gapiLoaded) {
+                        const {start, end} = getMonthRangeForDate(currentState.selectedDate);
+                        loadEvents(start, end)
+                                .then(() => {
+                                        setCurrentState(getCurrentDateState(currentState.selectedDate));
+                                });
+                }
+        }, [gapiLoaded]);
 
+        async function intializeGapiClient() {
+                await gapi.client.init({
+                        apiKey: API_KEY,
+                        discoveryDocs: [DISCOVERY_DOC],
+                });
+                setGapiLoaded(true);
+        }
+        
+        const loadGapi = () => {
+                gapi.load('client', intializeGapiClient);
+        }
+
+        const onClickDay = (date, event) => { 
+                setCurrentState(getCurrentDateState(date, true));
+
+                const events = monthToEvents[formMonthKey(date)] || [];
+                setEvents(events.filter((event) => { 
+                        return event?.start?.dateTime && moment(event.start.dateTime).format('DD') === moment(date).format('DD')
+                }));
+        }
+
+        const onActiveStartDateChange = ({ activeStartDate }) => {
+                const {start, end} = getMonthRangeForDate(activeStartDate);
+                loadEvents(start, end)
+                        .then(() => {
+                                setCurrentState(getCurrentDateState(activeStartDate));
+                        });
+        }
+
+        const tileClassName = ({ date }) => {
+                const tileClasses = ['calendar-tile'];
+                date.getTime() === currentState.selectedDate.getTime() && tileClasses.push('cal-selected');
+                const monthKey = formMonthKey(date);
+                if (monthToEvents[monthKey]) {
+                        const events = monthToEvents[monthKey];
+                        events.some((event) => moment(event.start.dateTime).format('DD') === moment(date).format('DD')) 
+                                && tileClasses.push('cal-has-event');
+                }
+
+                return tileClasses.join(' ');
+        } 
+
+        const loadEvents = (startDate, endDate) => {
+                const key = formMonthKey(startDate);
+                if (!monthToEvents[key]) {
+                        const request = {
+                                'calendarId': CALENDAR_ID,
+                                'timeMin': startDate.toISOString(),
+                                'timeMax':endDate.toISOString(),
+                                'showDeleted': false,
+                                'singleEvents': true,
+                                'orderBy': 'startTime'
+                        };
+                        return gapi.client.calendar.events.list(request)
+                                .then(response =>  {
+                                        setMonthToEvents(monthToEvents => {
+                                                monthToEvents[key] = [...response.result.items];
+                                                return monthToEvents;
+                                        });
+                                })
+                                .catch(err => console.error(err));
+                }
+                return Promise.resolve();
+        
+        }
 
         return (
                 <div className="w-100 events b-d-f-c" id='main-events'>
@@ -46,21 +109,29 @@ const Events = () => {
                                                 name={'events'}
                                                 darkMode
                                         />
-                                        <div className="mec-calendar">
-                                                <div className="mec-calendar-topsec">
-                                                        <div className="mec-calendar-side mec-clear">
+                                        <div className="cal-calendar">
+                                                <div className="cal-calendar-topsec">
+                                                        <div className="cal-calendar-side cal-clear">
                                                                 <div>
                                                                         <Calendar
-                                                                                onChange={onChange}
-                                                                                value={value}
-                                                                                onClick={onClick}
-                                                                                // tileContent={tileContent}
+                                                                                onActiveStartDateChange={onActiveStartDateChange}
+                                                                                onClickDay={onClickDay}
                                                                                 tileClassName={tileClassName}
+                                                                                locale="ru-RU"
+                                                                                showNeighboringMonth={false}
+                                                                                prevLabel={currentState.prevMonthName}
+                                                                                nextLabel={currentState.nextMonthName}
+                                                                                formatMonthYear={formatMonthYear}
+                                                                                view="month"
+
                                                                         />
                                                                 </div>
                                                         </div>
-                                                        <div className="mec-calendar-events-side mec-clear">
-
+                                                        <div className="cal-calendar-events-side cal-clear">
+                                                                <EventList
+                                                                        date={currentState.selectedDate}
+                                                                        events = {events}
+                                                                />
                                                         </div>
                                                 </div>
                                         </div>
@@ -71,49 +142,33 @@ const Events = () => {
 
 }
 
-const onClick = (value) => { 
-        console.log('New date is: ', value)
-}
-
-const tileContent = ({ date, view }) => {
-        console.log('tileContent: date', date);
-        console.log('tileContent: view', view)
-        return view === 'month' && date.getDay() === 0 ? <p>It's Sunday!</p> : null
-}
-
-const tileClassName = ({ date, view }) => {
-        return 'calendar-tile mec-has-event';//view === 'month' && date.getDay() === 3 ? 'saturday' : null; 
-}
-const getEvents = (calendarID, apiKey) => {
-    
-        function initiate() {
-          gapi.client
-            .init({
-              apiKey: apiKey,
-            })
-      
-            .then(function () {
-              return gapi.client.request({
-                path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events`,
-              });
-            })
-      
-            .then(
-              (response) => {
-                let events = response.result.items;
-                console.log('events',events);
-                return events;
-              },
-              function (err) {
-                return [false, err];
-              }
-            );
+const getCurrentDateState = (changedDate, isSelected) => {
+        return {
+                prevMonthName: `  ${moment(changedDate).subtract(1, "month").format('MMMM')}`,
+                nextMonthName: `${moment(changedDate).subtract(-1, "month").format('MMMM')}  `,
+                selectedDate: isSelected ? changedDate : getNDayOfMonth(changedDate.getFullYear(),changedDate.getMonth(),15)
         }
-      
-        gapi.load("client", initiate);
-      
-      };
+}
 
-     
+const getNDayOfMonth = (year, month, nday) => {
+        return new Date(year, month, nday);
+}
+
+const formatMonthYear = (locale, date) => {
+        return moment(date).format('MMMM YYYY');
+}
+
+const getMonthRangeForDate = (date) => {
+        const start = new Date(date.getFullYear(), date.getMonth(), 1);
+        const end = new Date(date.getFullYear(), date.getMonth() + 1, 1);
+
+        return { start, end };
+}
+
+const formMonthKey = (date) => {
+        return `${date.getYear()}-${date.getMonth()}`;
+}
+
+
 
 export {Events}

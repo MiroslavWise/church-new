@@ -9,7 +9,6 @@ const Contact = () => {
                                 <div className="block-content">
                                         <Title 
                                                 name={'contact'}
-                                                darkMode={false}
                                         />
                                         <div className="contact-items contact-items-grid">
                                                 {

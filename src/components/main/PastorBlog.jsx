@@ -7,7 +7,6 @@ const PastorBlog = () => {
                                 <div className="block-content">
                                         <Title 
                                                 name={'pastor_blog'}
-                                                darkMode={false}
                                         />
                                 </div>
                         </div>

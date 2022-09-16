@@ -243,9 +243,12 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  @media (max-width: 1065px) {
+    display: none;
+  }
 }
 
-.item-nav-link{
+.item-nav-link {
   @include d-flex-center();
   flex-direction: row;
 }
@@ -396,14 +399,17 @@ code {
 .about-block {
   background-color: $color-w-g;
   background-attachment: scroll;
-  .text-p{
-    @include d-flex-center();
-    p{
-      text-align: center;
-    }
-  }
   h4 {
     @include d-flex-center();
+  }
+}
+.text-p{
+  @include d-flex-center();
+  p{
+    text-align: center;
+    font-weight: 300 !important;
+    font-size: 16px !important;
+    line-height: 26px !important;
   }
 }
 
@@ -889,7 +895,7 @@ section {
 }
 
 .about_links_container{
-  height: 194px;
+  min-height: 194px;
   background-color: #615f5f;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -912,14 +918,26 @@ section {
 }
 
 .about_links{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns:  repeat(4, 20%);
+  justify-content:space-around ;
   width: 96%;
+  @media (max-width: 1200px) {
+    grid-template-columns:  repeat(2, 40%);
+    grid-template-rows: repeat(2, 40%);
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+  }
+  @media (max-width: 720px){
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 .link_about{
-    width: 218px;
     height: 42px;
     border: 3px solid $color-yellow;
     display: flex;
@@ -927,6 +945,9 @@ section {
     align-items: center;
     background-color: transparent;
     transition: all 0.3s ease-in-out;
+    @media (max-width: 1200px) {
+      // width: 40%;
+    }
     span{
       color: $color-w-g;
       font-size: 15px;
@@ -936,6 +957,9 @@ section {
     &:hover{
         background-color: $color-prime;
         border-color: $color-prime-two;
+    }
+    @media (max-width: 720px){
+      width: 50%;
     }
 }
 
@@ -957,7 +981,7 @@ section {
     padding: 5% 10%;
     > h5 {
       font-weight: 400 !important;
-      font-size: 18px !important;
+      font-size: 16px !important;
       color: $color-w-g;
     }
   }
@@ -1186,3 +1210,73 @@ section {
   }
 }
 
+.about_pastors_container{
+
+}
+
+.block_content_about{
+  max-width: 85%;
+  flex-direction: column;
+  margin: 3em auto;
+}
+.about_faith_container{
+  transition: height 0.6s ease-in-out;
+}
+
+.faith_items{
+  max-width: 90%;
+  color:#fdfdfd;
+}
+.button_answers{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 40px;
+  gap: 3px;
+  
+}
+.item_button_answers{
+  cursor: pointer;
+  padding: 2px 20px;
+  border-radius: 30px;
+  transition: all 0.25s ease-in-out;
+  align-items: center;
+  &:hover{
+    color: #d14f42;
+  }
+  span{
+    font-weight: bold;
+    font-size: 22px;
+    font-style: normal;
+    text-transform: uppercase;
+  }
+}
+.active{
+  background-color: $color-w-g;
+  color: $color-prime;
+  &:hover{
+    color: $color-prime;
+  }
+}
+
+.description_text{
+  padding: 30px 20px 0;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  // scale: 0.4;
+  transition: all 1s ease-in-out;
+  span{
+    font-size: 22px;
+    text-align: center;
+  }
+}
+// .description_text_active{
+//   scale: 1;
+// }
+
+#faith_item_title{
+  max-width: 95%; 
+  font-size: 22px !important;
+  color:#fdfdfd;
+}

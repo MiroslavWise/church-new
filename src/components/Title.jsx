@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 const DARK_COLOR = '#31333b';
 const LIGHT_COLOR = '#FFFFFF';
 
-const Title = ({name, darkMode}) => {
+const Title = ({name, darkMode=false}) => {
         const {t} = useTranslation()
         const ref = useRef(null);
         const isInViewport = useIsInViewport(ref);

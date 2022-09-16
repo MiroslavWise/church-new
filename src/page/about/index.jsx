@@ -1,11 +1,23 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 import { ButtonMore } from 'components'
 import { AboutLinks, Pastors, SmallInfo, Faith } from 'components/about'
+import {aboutLinks} from 'components/about/AboutLinks'
+
+let BehaviorLinks;
 
 
 
 const About = () => {
         const [visibility, setVisibility] = useState(false)
+
+        useLayoutEffect(() => {
+                BehaviorLinks =aboutLinks.map(({ link }) => (
+                        document?.getElementById(`t${link}`)?.addEventListener('click', () => {
+                                window?.scroll({ top: document?.getElementById(`a-${link}`).offsetTop - 59, behavior: 'smooth' });
+                        })
+                ))
+        }, [])
+
         useEffect(() => {
                 setVisibility(true)
         }, [])

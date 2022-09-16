@@ -1002,3 +1002,29 @@ section {
   max-width: 95%; 
   color:#fdfdfd;
 }
+
+.button_answers{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  line-height: 40px;
+  .item_button_answers{
+    cursor: pointer;
+    padding: 0 20px;
+    border-radius: 22px;
+    transition: all 0.25s ease-in-out;
+    &:hover{
+      color: #d14f42;
+    }
+    span{
+      font-weight: bold;
+      font-size: 16px;
+      font-style: normal;
+      text-transform: uppercase;
+    }
+    .active{
+      background-color: $color-w-g;
+      color: $color-prime;
+    }
+  }
+}

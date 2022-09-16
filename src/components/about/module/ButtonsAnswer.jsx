@@ -1,18 +1,16 @@
+import { useState } from "react"
+import { ItemAnswer } from './ItemAnswer'
 
-
-export const ButtonsAnswer = ({answer = [], onChange}) => {
-
-
+export const ButtonsAnswer = ({ answer, setKeyItem, keyItem }) => {
+  
+        const onChange = (key) => {
+                setKeyItem(key)
+        }
         return (
                 <div className="button_answers">
                         {
-                                answer.map(({ title, description, key }, i) => (
-                                        <div
-                                                className="item_button_answers"
-                                                onClick={()=>{onChange(key)}}
-                                        >
-                                                <span>{title}</span>
-                                        </div>
+                                answer.map(item => (
+                                        <ItemAnswer {...{item, onChange, keyItem}} />
                                 ))
                         }
                 </div>

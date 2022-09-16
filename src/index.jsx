@@ -14,7 +14,6 @@ import { maps } from 'routes/mapping'
 import { ModalMeeting } from 'components/module/ModalMeeting'
 
 import { links } from 'components/module/LinksId'
-import {aboutLinks} from 'components/about/AboutLinks'
 window.__forceSmoothScrollPolyfill__ = true;
 smoothscroll.polyfill()
 let BehaviorLinks;
@@ -32,18 +31,13 @@ const Routing = () => {
     })
 
     useLayoutEffect(() => {
-        BehaviorLinks = [...links.map(({ link }) => (
+        BehaviorLinks = links.map(({ link }) => (
             document?.getElementById(`t${link}`).addEventListener('click', () => {
                 requestAnimationFrame(
                     window?.scroll({ top: document?.getElementById(`main-${link}`)?.offsetTop - 59, behavior: 'smooth' })
                 )
             })
-        )),
-            ...aboutLinks.map(({ link }) => (
-            document?.getElementById(`t${link}`)?.addEventListener('click', () => {
-                window?.scroll({ top: document?.getElementById(`a-${link}`).offsetTop - 59, behavior: 'smooth' });
-            })
-        ))]
+        ))
     })
 
     const [modalVisible, setModalVisible] = useState(false)

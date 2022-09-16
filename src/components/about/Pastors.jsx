@@ -3,7 +3,7 @@ import { Title } from 'components'
 export const Pastors = () => {
 
         return (
-                <div className="about_pastors_container w-100">
+                <div className="about_pastors_container w-100" id='a-pastor'>
                         <div className="block_content_about">
                                 <Title className="about-title"
                                         name='пастора и лидеры'

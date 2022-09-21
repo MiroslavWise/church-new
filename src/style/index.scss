@@ -54,6 +54,10 @@ button{
   cursor: pointer;
 }
 
+abbr[title]{
+  text-decoration: none;
+}
+
 html{
   scroll-padding-top: 59px !important;
 }
@@ -869,11 +873,6 @@ section {
   padding: 50px 10px 40px;
 }
 
-
-
-
-
-
 .not_visible{
   visibility: hidden;
   opacity: 0;
@@ -985,6 +984,229 @@ section {
       font-size: 16px !important;
       color: $color-w-g;
     }
+  }
+}
+
+.calendar-tile {
+  color: #4d4d4d;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  width: 16px;
+  aspect-ratio: 1;
+  &:hover:not(.cal-has-event) {
+    background-color: rgba(142, 138, 138, 0.1);
+  } 
+  &.cal-has-event:hover {
+    background-color: rgba(12, 143, 127, 1);
+  } 
+}
+
+.cal-selected {
+  background-color: rgba(12, 143, 127, 1);
+  &:not(.cal-has-event) {
+    background-color: rgba(142, 138, 138, 0.1);
+  } 
+}
+
+.cal-calendar {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border: 1px solid #e8e8e8;
+  width: 100%;
+  box-shadow: 0 2px 0 0 #000000 / 2%;
+}
+
+.cal-calendar .cal-calendar-topsec {
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+}
+.cal-calendar .cal-calendar-side {
+  width: 55%;
+  padding: 35px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 1px 5px 6px #000000 / 1% inset;
+}
+
+.cal-clear:after, .cal-clear:before {
+  content: " ";
+  display: table;
+}
+
+.cal-calendar .cal-calendar-events-side {
+  display: table-cell;
+  height: 100%;
+  border-left: 1px solid #efefef;
+  padding: 35px;
+  width: 45%;
+}
+
+.cal-has-event:not(.cal-selected):after {
+  background-color: rgba(219, 147, 39, 0.9);
+  border-radius: 50%;
+  display: block;
+  content: "";
+  width: 7px;
+  aspect-ratio: 1;
+  margin: -4px 0 0 -4px;
+  transition: all .15s ease;
+  position: relative;
+  top: 15%;
+  left: 50%;
+}
+
+.cal-has-event:hover::after {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+
+.cal-table-side-title {
+  text-align: center;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.cal-table-side-day {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 20px;
+  position: relative;
+  text-align: center;
+  line-height: 46px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #db9327;
+}
+
+.cal-event-article {
+  text-align: left;
+  margin-bottom: 0;
+  padding-bottom: 25px;
+  padding-top: 26px;
+  border-top: 1px solid #efefef;
+  transition: all .33s ease;
+  cursor: default;
+  &:hover {
+    background-color: #fafafa;
+  }
+}
+
+.cal-event-article .cal-event-image {
+  float: left;
+  margin-right: 20px;
+  width: 65px;
+  height: auto;
+}
+
+.cal-event-article .cal-event-time {
+  font-size: 11px;
+  line-height: 1.1;
+  margin: 0;
+  color: #db9327;
+}
+
+.cal-event-article .cal-sl-clock-o {
+  &:before {
+    content: "\25F7   ";
+  }
+}
+
+.cal-event-title {
+  font-weight: 500;
+  color: #0c8f7f;
+  font-size: 20px;;
+}
+
+.cal-event-detail {
+  font-size: 13px;
+  line-height: 1.3;
+  color: #9a9a9a;
+  margin-bottom: 0;
+}
+
+@mixin cal-month-navigation() {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  min-width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: #fff;
+  color: #a9a9a9;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #efefef;
+  border-top: none;
+  box-shadow: 0 2px 0 0 #000000 / 2%;
+  transition: all .33s ease;
+  &:hover {
+    background-color: #f9f9f9;
+  }
+}
+
+.react-calendar__month-view__days{
+  display: grid;
+  grid-template-columns: repeat(7, 15px);
+}
+
+.react-calendar__month-view__weekdays__weekday{
+  font-weight: 700;
+}
+
+.react-calendar__navigation__label {
+  margin-top: 35px;
+  margin-bottom: 25px;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  display: block;
+  pointer-events: none;
+}
+
+.react-calendar__navigation__prev2-button {
+  display: none;
+}
+
+.react-calendar__navigation__next2-button {
+  display: none;
+}
+
+.react-calendar__navigation__prev-button {
+  left: 0;
+  border-bottom-right-radius: 6px;
+  border-left: none;
+  @include cal-month-navigation();
+  &:before {
+    content: "\276C";
+    font-size: 16px;
+    color: rgba(64, 217, 241, 0.7);
+    cursor: pointer;
+    vertical-align: -4%;
+  }
+}
+
+.react-calendar__navigation__next-button {
+  right: 0;
+  border-bottom-left-radius: 6px;
+  border-right: none;
+  @include cal-month-navigation();
+  &:after {
+    content: "\276D";
+    font-size: 16px;
+    color: rgba(64, 217, 241, 0.9);
+    cursor: pointer;
+    vertical-align: -4%;
   }
 }
 

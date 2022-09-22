@@ -617,7 +617,8 @@ code {
 }
 
 .modal-meeting{
-  @include d-flex-center();
+  display: flex;
+  align-items: center;
   flex-direction: column;
   position:fixed;
   top: -70%;
@@ -625,27 +626,27 @@ code {
   visibility: hidden;
   opacity: 0;
   width: 75%;
-  min-height: 300px;
+  min-height: 270px;
   background-color: #0c8f7f;
   transform: translate(-50%, 0%);
   transition: all 0.4s ease-in-out;
   z-index: 1000;
-  padding: 20px;
   .modal-title{
-    width: 90%;
+    padding-top: 3rem;
+    width: 88%;
     text-align: start;
-    padding-left: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
     h2{
       color: $color-yellow;
     }
     
   }
   .modal-description{
-    width: 80%;
-    padding-left: 60px;
+    width: 88%;
+    padding-bottom: 1.5rem;
     h4{
       color: $color-w-g;
+      font-size: 1.0em;
     }
   }
 }
@@ -913,7 +914,7 @@ section {
 .contact-items{
   margin: 3.8rem 5rem;
   @media (max-width: $mobile) {
-    margin: 1rem;
+    margin: 0rem;
   }
 }
 .contact-items-grid{
@@ -922,7 +923,9 @@ section {
   height: 100%;
   gap: 20px;
   @media (max-width: $mobile) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    margin-right: 3rem;
   }
 }
 
@@ -931,14 +934,37 @@ section {
   color: white;
   text-align: center;
   font-size: 14px;
+  @media (max-width: $mobile) {
+    display: flex;
+    text-align: left;
+  }
 }
 
 .contact-item-logo{
   height: 55px;
   margin-bottom: 1rem;
+  @media (max-width: $mobile) {
+    height: 1em;
+    aspect-ratio: 1;
+    display: inline;
+    margin-bottom: 0rem;
+    margin-left: 0rem;
+    margin-right: 0.5rem;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
-
+.contact-item-text {
+  @media (max-width: $mobile) {
+    display: inline;
+    margin-right: 1.5rem;
+    br {
+      display: none;
+    }
+  }
+}
 
 
 // About page

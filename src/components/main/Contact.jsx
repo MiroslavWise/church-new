@@ -20,10 +20,8 @@ const Contact = () => {
                                                                         data-aos-offset="140"
                                                                         data-aos-duration="650" 
                                                                 >
-                                                                        <div>
-                                                                                <img src={logo} alt="logos" className="contact-item-logo" />
-                                                                        </div>
-                                                                        <div> {text}</div>
+                                                                        <img src={logo} alt="logos" className="contact-item-logo" />
+                                                                        <div className="contact-item-text"> {text}</div>
                                                                 </div>
                                                         ))
                                                 }

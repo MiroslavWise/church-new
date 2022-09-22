@@ -76,7 +76,7 @@ const contacts = [
                 logo: email,
         },
         {
-                text: <span>Собрания: <br/>каждое воскресение в 10:00 и 17:00</span>, 
+                text: <span>Собрания: <br/>воскресение в 10:00 и 17:00</span>, 
                 logo: clock,
         }
 ]

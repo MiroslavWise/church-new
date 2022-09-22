@@ -9,15 +9,10 @@ const Title = ({name, darkMode=false}) => {
         const ref = useRef(null);
         const isInViewport = useIsInViewport(ref);
 
-        
-
         return(
                 <div className="title_block">
                         <div 
                                 className={`title ${isInViewport && 'show-title'}`} 
-                                // data-aos="fade-up" 
-                                // data-aos-duration="450" 
-                                // data-aos-offset="60" 
                                 style={{color: darkMode ? DARK_COLOR : LIGHT_COLOR}}
                         >
                                 {t(name)}

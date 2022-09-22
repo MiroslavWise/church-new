@@ -17,7 +17,7 @@ const EventList = ({date, events}) => {
                                     <div className="cal-event-article">
                                         <div className="cal-event-time">
                                             <span className="cal-sl-clock-o"></span> 
-                                            {`${moment(start.dateTime).format('HH:MM')} - ${moment(end.dateTime).format('HH:MM')}`}
+                                            {`${moment(start.dateTime).format('HH:mm')} - ${moment(end.dateTime).format('HH:mm')}`}
                                         </div>
                                         <div className="cal-event-title"> {summary} </div>
                                         <div className="cal-event-detail"> {location ? location : 'В церкви'}</div>

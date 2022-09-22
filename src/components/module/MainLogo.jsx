@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 
-import logo from 'assets/png/bible-quran-64.png'
+import logo from 'assets/svg/logo.svg'
 
 import {ScrollTop} from 'assets/func'
 

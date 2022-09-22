@@ -16,14 +16,12 @@ const Events = () => {
         const [gapiLoaded, setGapiLoaded] = useState(false);
         const [monthToEvents, setMonthToEvents] = useState({});
         const [events, setEvents] = useState([]);
-        console.log('events',events);
-        
+
         useEffect(() => {
                 loadGapi();
         }, []);
 
         moment.locale('ru');
-
 
         useEffect(() => {
                 if (gapiLoaded) {
@@ -114,25 +112,22 @@ const Events = () => {
                                                         <div className="cal-calendar-side cal-clear">
                                                                 <div>
                                                                         <Calendar
-                                                                                onActiveStartDateChange={onActiveStartDateChange}
-                                                                                onClickDay={onClickDay}
-                                                                                tileClassName={tileClassName}
+                                                                                onActiveStartDateChange={ onActiveStartDateChange }
+                                                                                onClickDay={ onClickDay }
+                                                                                tileClassName={ tileClassName }
                                                                                 locale="ru-RU"
-                                                                                showNeighboringMonth={false}
-                                                                                prevLabel={currentState.prevMonthName}
-                                                                                nextLabel={currentState.nextMonthName}
-                                                                                formatMonthYear={formatMonthYear}
+                                                                                showNeighboringMonth={ false }
+                                                                                prevLabel={ currentState.prevMonthName }
+                                                                                nextLabel={ currentState.nextMonthName }
+                                                                                formatMonthYear={ formatMonthYear }
                                                                                 view="month"
-
                                                                         />
                                                                 </div>
                                                         </div>
-                                                        <div className="cal-calendar-events-side cal-clear">
-                                                                <EventList
-                                                                        date={currentState.selectedDate}
-                                                                        events = {events}
-                                                                />
-                                                        </div>
+                                                        <EventList
+                                                                date={ currentState.selectedDate }
+                                                                events = { events }
+                                                        />
                                                 </div>
                                         </div>
                                 </div>

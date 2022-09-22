@@ -817,7 +817,7 @@ section {
 @for $i from 0 to 6 {
     #toggle#{$i}:checked ~ #content#{$i}{
       margin-bottom: 2rem;
-      margin-top: 0.5rem;
+      margin-top: 0.3rem;
       margin-left: 1.1rem;
       max-height: 6em;
       color: rgba(255,255,255,0.9);

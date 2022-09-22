@@ -31,7 +31,7 @@ h1{
     font-size: 4em;
   }
   @media (max-width: $mobile)  {
-    font-size: 2.5em;
+    font-size: 2.1em;
   }
 }
 h2{
@@ -41,7 +41,7 @@ h2{
     font-size: 1.8em;
   }
   @media (max-width: $mobile)  {
-    font-size: 1.3em;
+    font-size: 1.0em;
   }
 }
 h3{
@@ -49,7 +49,7 @@ h3{
   font-size: 2em;
   font-weight: 400;
   @media (max-width: $mobile)  {
-    font-size: 1.1em;
+    font-size: 0.9em;
   }
 }
 h4{
@@ -85,7 +85,6 @@ body {
   --webkit-scroll-behavior: smooth;
   --moz-osx-scroll-behavior: smooth;
   overflow: overlay;
-  background-color: red;
 }
 
 ::-webkit-scrollbar{
@@ -360,10 +359,9 @@ code {
   background-size: 100%;
   transition: all 10s ease-out 3ms;
   background-repeat: no-repeat;
-  min-width: 100%;
+  width: 100%;
   min-height: 100vh;
   @media (max-width: $mobile)  {
-    min-width: 100%;
     background-position-y:center;
   }
 }
@@ -407,8 +405,6 @@ code {
 
 .block {
   max-width: 92%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .block-content {
@@ -418,7 +414,6 @@ code {
   @media (max-width: $mobile) {
     max-width: 92%;
   }
-  // height: 100%;
   > p{
     font-weight: 300;
     color: rgba($color-secondary, 0.8);
@@ -456,7 +451,7 @@ code {
 }
 
 .button-n-hover{
-  &:hover{
+  &:hover, &:focus{
     background-color: #0C8F81;
     color: $color-w-g;
   }
@@ -566,10 +561,10 @@ code {
     pointer-events: none;
     padding: 10px 20px;
     @media (max-width: $mobile) {
-      letter-spacing: 1.7px !important;
+      letter-spacing: 0.7px !important;
       padding: 0.6em;
-      border: solid 2px $color-yellow;
-      font-size: 15px;
+      border: solid 2px #db9327;
+      font-size: 0.8em;
     }
 }
 }
@@ -625,19 +620,19 @@ code {
   @include d-flex-center();
   flex-direction: column;
   position:fixed;
-  top: 50%;
+  top: -70%;
   left: 50%;
   visibility: hidden;
   opacity: 0;
   width: 75%;
   min-height: 300px;
   background-color: #0c8f7f;
-  transform: translate(-50%, -200%);
+  transform: translate(-50%, 0%);
   transition: all 0.4s ease-in-out;
   z-index: 1000;
   padding: 20px;
   .modal-title{
-    width: 80%;
+    width: 90%;
     text-align: start;
     padding-left: 30px;
     margin-bottom: 20px;
@@ -656,7 +651,7 @@ code {
 }
 .modal-visible{
   visibility:visible;
-  transform: translate(-50%, -100%);
+  top: 25%;
   opacity: 1;
 }
 
@@ -669,25 +664,28 @@ code {
   flex-direction: row;
   justify-content: space-between;
   height: 100%;
-  max-width: 100%;
+  width: 100%;
   @media (max-width: $mobile) {
     flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    // align-items: center;
+    // gap: 15px;
   }
 }
 
 .youtube-grid{
   display: grid;
   grid-template-areas: "a a a" "a a a" "b c d";
-  width: 46%;
+  max-width: 46%;
   // height: 100%;
   gap: 10px;
   aspect-ratio: 16/9;
-  position: relative;
+  position:relative;
   @media (max-width: $mobile) {
-    width: 100%;
-    display: none;
+    max-width: 90%;
+    padding: 0;
+    margin: 0;
+    aspect-ratio: auto;
+    // display: none;
     // height:100%;
   }
 }
@@ -739,6 +737,7 @@ code {
   padding: 3px;
   @media (max-width: $mobile) {
     width: 100%;
+    padding: 0;
   }
   > p{
     font-weight: 300;
@@ -765,7 +764,13 @@ code {
     display: flex;
     flex-direction: column;
     justify-items: start;
+    @media (max-width: $mobile) {
+      font-size: 14px;
+      margin: 0 auto;
+      padding-left: 15px;
+    }
   }
+  
 }
 
 .questions_description{
@@ -1089,7 +1094,8 @@ section {
   &:hover:not(.cal-has-event) {
     background-color: rgba(142, 138, 138, 0.1);
   } 
-  &.cal-has-event:hover {
+  &.cal-has-event:hover,  &.cal-has-event:focus{
+    transition: background-color 0.4ms ease-in-out;
     background-color: rgba(12, 143, 127, 1);
   } 
 }
@@ -1105,42 +1111,54 @@ section {
   margin-bottom: 20px;
   margin-top: 20px;
   border: 1px solid #e8e8e8;
-  width: 100%;
+  max-width: 100%;
   box-shadow: 0 2px 0 0 #000000 / 2%;
+  @media (max-width: $mobile) {
+    max-width: 100%;
+  }
+  .cal-calendar-topsec {
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+  .cal-calendar-side {
+    width: 55%;
+    padding: 35px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 1px 5px 6px #000000 / 1% inset;
+    @media (max-width: $mobile) {
+      width: 100%;
+      padding: 0;
+    }
+  }
 }
 
-.cal-calendar .cal-calendar-topsec {
-  background: #fff;
-  display: flex;
-  flex-direction: row;
-  @media (max-width: $mobile) {
-    flex-direction: column;
-  }
-}
-.cal-calendar .cal-calendar-side {
-  width: 55%;
-  padding: 35px;
-  position: relative;
-  text-align: center;
-  box-shadow: 0 1px 5px 6px #000000 / 1% inset;
-  @media (max-width: $mobile) {
-    width: 100%;
-  }
-}
 
 .cal-clear:after, .cal-clear:before {
   content: " ";
   display: table;
 }
 
-.cal-calendar .cal-calendar-events-side {
-  display: table-cell;
-  height: 100%;
-  border-left: 1px solid #efefef;
-  padding: 35px;
-  width: 45%;
-  @media (max-width: $mobile) {
-    width: 100%;
+.cal-calendar{
+  .cal-calendar-events-side {
+    display: table-cell;
+    height: 100%;
+    border-left: 1px solid #efefef;
+    padding: 35px;
+    width: 45%;
+    @media (max-width: $mobile) {
+      width: 100%;
+      padding: 0;
+    }
+    .cal-event-article{
+      @media (max-width: $mobile) {
+        padding: 25px 10px;
+      }
+    }
   }
 }
 
@@ -1169,6 +1187,10 @@ section {
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-bottom: 14px;
+  @media (max-width: $mobile) {
+    border-top: 1px solid #efefef;
+    margin-top: 10px;
+  }
 }
 
 .cal-table-side-day {
@@ -1194,6 +1216,7 @@ section {
   &:hover {
     background-color: #fafafa;
   }
+
 }
 
 .cal-event-article .cal-event-image {
@@ -1273,6 +1296,10 @@ section {
   color: #333;
   display: block;
   pointer-events: none;
+  @media (max-width: $mobile) {
+    margin-top: 55px;
+    text-align: center;
+  }
 }
 
 .react-calendar__navigation__prev2-button {

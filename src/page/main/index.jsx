@@ -10,21 +10,18 @@ import {
 } from 'components/main'
 
 
-const Main = () => {
-
-        return(
-                <div className="main_container">
-                        <Greeting />
-                        <About />
-                        <Meeting />
-                        <Stream />
-                        <QA />
-                        <Events />
-                        <Contact />
-                        <Maps />
-                </div>
-        )
-}
+const Main = () => (
+        <div className="main_container">
+                <Greeting />
+                <About />
+                <Meeting />
+                <Stream />
+                <QA />
+                <Events />
+                <Contact />
+                <Maps />
+        </div>
+)
 
 export { Main }
 

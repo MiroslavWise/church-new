@@ -14,7 +14,7 @@ const ItemYouTubeImage = ({item, i, onChange, videoID}) => {
         }, [videoID])
 
         return(
-                <div className={`you-${i} w-100 h-100`}>
+                <div className={`you-${i} w-100`}>
                         <YouTubeIconPlay  {...{visibleIcon, playVisible}}/>
                         <img
                                 alt={item?.snippet?.title}

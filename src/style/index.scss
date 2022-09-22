@@ -3,6 +3,10 @@
 @import './style-base-64.scss';
 @import '../components/main/stylemain.scss';
 
+:root{
+  --color-prime: #145b61;
+}
+
 $color-prime: #145b61;
 $color-secondary: #3b3d4a;
 $color-yellow: #db9327;
@@ -242,7 +246,7 @@ code {
 .logo-header{
   height: 59px;
   width: 59px;
-  @media screen {
+  @media (max-width: $mobile) {
   margin-left: 15px;
   }
 }

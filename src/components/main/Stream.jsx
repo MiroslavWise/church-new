@@ -6,14 +6,14 @@ import YouTubeLarge from 'assets/svg/YouTube_Logo_Large.jsx'
 const Stream = () => {
 
         return(
-                <div className="w-100 teaching b-d-f-c" id='main-video_stream'>
+                <div className="w-100 stream b-d-f-c" id='main-video_stream'>
                         <div className="block w-100">
                                 <div className="block-content">
                                         <Title 
                                                 name={'video_stream'}
                                                 darkMode
                                         />
-                                        <div className="teaching-flex">
+                                        <div className="stream-flex">
                                                 <VideosYouTube />
                                                 <div className='you-description' data-aos="fade-up" data-aos-duration="600">
                                                         <div>

@@ -4,20 +4,15 @@ import { useTranslation } from 'react-i18next';
 const DARK_COLOR = '#31333b';
 const LIGHT_COLOR = '#FFFFFF';
 
-const Title = ({name, darkMode}) => {
+const Title = ({name, darkMode=false}) => {
         const {t} = useTranslation()
         const ref = useRef(null);
         const isInViewport = useIsInViewport(ref);
-
-        
 
         return(
                 <div className="title_block">
                         <div 
                                 className={`title ${isInViewport && 'show-title'}`} 
-                                // data-aos="fade-up" 
-                                // data-aos-duration="450" 
-                                // data-aos-offset="60" 
                                 style={{color: darkMode ? DARK_COLOR : LIGHT_COLOR}}
                         >
                                 {t(name)}

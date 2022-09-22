@@ -4,12 +4,11 @@ import { contacts } from './modules/ArrayBlocks'
 const Contact = () => {
 
         return(
-                <div className="w-100 contact" id='main-contact'>
+                <div className="w-100 contact b-d-f-c" id='main-contact'>
                         <div className="block">
                                 <div className="block-content">
                                         <Title 
                                                 name={'contact'}
-                                                darkMode={false}
                                         />
                                         <div className="contact-items contact-items-grid">
                                                 {
@@ -29,12 +28,12 @@ const Contact = () => {
                                                         ))
                                                 }
                                         </div>
-                                        <div className="button-more-wrapper">
+                                        {/* <div className="button-more-wrapper">
                                                 <ButtonMore
                                                         className='button-n-hover'
                                                         title={'Подробные контакты'}
                                                 />
-                                        </div>
+                                        </div> */}
                                 </div>
                         </div>
                 </div>

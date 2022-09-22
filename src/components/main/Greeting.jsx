@@ -8,19 +8,19 @@ const Greeting = () => {
                 setScale(true)
         }, [])
         return(
-                <div className="w-100 greeting b-d-f-c">
-                        <div className={`greeting-image ${loaded && 'scale'}`}></div>
-                        <div className={`greeting-title ${loaded && 'show-opacity'}`}>
-                                <h3 className={`greet-title-0 ${loaded && 'show-opacity'}`}>Верные Богу, служащие людям</h3>
-                                <h1 className={`greet-title-0 ${loaded && 'show-opacity'}`}>Добро пожаловать</h1>
-                                <h2 className={`greet-title-0 ${loaded && 'show-opacity'}`}>Церковь ЕХБ «Слово Жизни» в Столине</h2>
-                                <ButtonMore 
-                                        className={`greet-button m-t-5 ${loaded && 'show-opacity'}`}
-                                        title={'Важно знать'}
-                                        link = {"/about"}
-                                />
+                <div className="greeting b-d-f-c">
+                        <div className={`greeting-image ${loaded && 'scale'}`}>
+                                        <div className={`greeting-title ${loaded && 'show-opacity'}`}>
+                                        <h3 className={`greet-title-0 ${loaded && 'show-opacity'}`}>Верные Богу, служащие людям</h3>
+                                        <h1 className={`greet-title-0 ${loaded && 'show-opacity'}`}>Добро пожаловать</h1>
+                                        <h2 className={`greet-title-0 ${loaded && 'show-opacity'}`}>Церковь ЕХБ «Слово Жизни» в Столине</h2>
+                                        <ButtonMore 
+                                                className={`greet-button m-t-5 ${loaded && 'show-opacity'}`}
+                                                title={'Важно знать'}
+                                                link = {"/greeting"}
+                                        />
+                                </div>
                         </div>
-                        
                 </div>
         )
 }

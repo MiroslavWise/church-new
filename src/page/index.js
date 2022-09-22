@@ -1,7 +1,9 @@
-import {About} from './about'
-import {Main} from './main'
+import {Greeting} from './greeting'
+import { Main } from './main'
+import About from './about'
 
 export {
-        About,
+        Greeting,
         Main,
+        About
 }

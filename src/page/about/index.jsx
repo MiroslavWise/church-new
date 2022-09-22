@@ -1,55 +1,37 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 import { ButtonMore } from 'components'
+import { AboutLinks, Pastors, SmallInfo, Faith } from 'components/about'
+import {aboutLinks} from 'components/about/AboutLinks'
+
+let BehaviorLinks;
+
+
 
 const About = () => {
         const [visibility, setVisibility] = useState(false)
+
+        useLayoutEffect(() => {
+                BehaviorLinks =aboutLinks.map(({ link }) => (
+                        document?.getElementById(`t${link}`)?.addEventListener('click', () => {
+                                window?.scroll({ top: document?.getElementById(`a-${link}`).offsetTop - 59, behavior: 'smooth' });
+                        })
+                ))
+        }, [])
+
         useEffect(() => {
                 setVisibility(true)
         }, [])
-
-        return(
+        return (
                 <div className={`about_container not_visible ${visibility && "visible"}`}>
-                        <div className = "bg_about_page_title about_image">
-                                <h1 className="h1-about">Больше, чем церковь</h1>
+                        <div className='bg_about_page_title about_main_image'>
+                                <h1 className="h1-about _h1">О нас</h1>
                         </div>
-                        <div className="block-content about_description">
-                                <p>
-                                        Церковь «Слово Жизни» в Столине существует благодаря Евангелию - доброй вести о спасении через Иисуса Христа. 
-                                        Что такое Евангелие? Ответ на этот вопрос мы можем найти в Библии.
-                                </p>
-                                <br />
-                                <p>
-                                        Некоторые люди думают, что Библия - это сборник правил, которые указывают нам, что можно делать, а чего нельзя. 
-                                        Библия, конечно, содержит в себе некоторые правила. Они учат нас жить так, чтобы нам было хорошо. 
-                                        Но на самом деле эта книга не столько о том, как мы должны себя вести, сколько о Боге и о том, что Он для нас сделал. 
-                                        Библия - это история о том, как Бог любит Своих детей и приходит к ним на помощь. В чем же Его любовь к нам проявилась?
-                                </p>
-                                <br />
-                                <p>
-                                        Дело в том, что однажды в прекрасный Божий мир ворвался грех, и теперь сердца всех людей заражены им. 
-                                        Грех делает нам врагами Бога. За каждый грех человек должен понести наказание. И изменить  такое положение дел не в наших силах. 
-                                        Но Бог любит Своих детей так сильно, что не мог позволить, чтобы все закончилось так печально. 
-                                        Иисус вместо нас взял на Себя наказание за все грехи, которые совершили или собирались совершить все люди на земле. 
-                                        Всю силу Своего страшного гнева Бог обрушил на Иисуса. Своего единственного Сына.    
-                                        Только так мог Он истребить грех, не истребляя Своих детей, чьи сердца были полны греха. Вот то Евангелие, в которое мы верим!
-                                        Поэтому христианская жизнь начинается с веры и продолжается на основе веры в то,
-                                        что Бог избрал нас стать детьми Божьими через Иисуса Христа, через Его смерть и воскресение, и жить не для себя, а для Его славы.
-
-                                </p>
-                                <br />
-                                <p>
-                                        Мы как церковь призваны провозглашать Евангелие Иисуса Христа в городе Столине. 
-                                        Мы существуем ради Христа и Его дела спасения и для славы Божьей.
-                                </p>
-                                <div className="button-more-wrapper m-t-3">
-                                        <ButtonMore
-                                                className='button-n-hover'
-                                                title={'на главную'}
-                                        />
-                                </div>
-                        </div>
+                        <AboutLinks />
+                        <SmallInfo />
+                        <Pastors />
+                        <Faith />
                 </div>
         )
 }
 
-export {About}
+export default About

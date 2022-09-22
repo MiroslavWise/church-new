@@ -65,14 +65,16 @@ const VideosYouTube = () => {
         // }, [])
         return(
                 <div className='youtube-grid' data-aos="fade-up" data-aos-duration="600">
-                        <div className={`you-0 w-100 h-100`}>
+                        <div className={`you-0`}>
                                 <iframe 
-                                        width="100%" 
-                                        height="100%"
+                                        style={{
+                                                width: '100%',
+                                                height: '100%'
+                                        }}
                                         src={`https://www.youtube.com/embed/${videoID || videos[0]?.id?.videoId}`}
                                         title="YouTube video player" 
                                         frameborder="0"
-                                        onPlay={true}
+                                        onPlay
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" 
                                         allowfullscreen
                                 ></iframe>

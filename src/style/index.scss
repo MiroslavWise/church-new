@@ -949,6 +949,9 @@ section {
   height: 350px;
   width: 100%;
   position: relative;
+  @media (max-width: $mobile) {
+    height: 250px;
+  }
 }
 
 .h1-about{
@@ -963,11 +966,29 @@ section {
   top: calc(50% + 59px);
   left: 50%;
   transform: translate(-50%, -50%);
+  @media (max-width: $mobile){
+    font-size: 30px !important;
+    width: 100% !important;
+    text-align: center;
+  }
 }
 
 .greeting_description{
   margin: 50px auto;
   padding: 50px 10px 40px;
+  @media (max-width: $mobile){
+    padding: 10px;
+    margin: 20px auto;
+    br{
+      margin: 0;
+      padding: 0;
+    }
+    p{
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+  
 }
 
 .not_visible{
@@ -988,6 +1009,9 @@ section {
   ._h1{
     font-size:4.5em;
     font-weight: 800;
+  }
+  @media (max-width: $mobile){
+    height: 250px;
   }
 }
 
@@ -1012,6 +1036,17 @@ section {
       line-height: 38px !important;
     }
   }
+  @media (max-width: $mobile){
+    .block-content_{
+      padding: 0 10px;  
+      h6{
+        text-align: center;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        line-height: 25px !important;
+      }
+    }
+  }
 }
 
 .about_links{
@@ -1030,7 +1065,10 @@ section {
   @media (max-width: 720px){
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 10px;
+  }
+  @media (max-width: $mobile){
   }
 }
 
@@ -1051,12 +1089,21 @@ section {
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
-    &:hover{
+    &:hover, &:focus{
         background-color: $color-prime;
         border-color: $color-prime-two;
     }
     @media (max-width: 720px){
       width: 50%;
+    }
+    @media (max-width: $mobile){
+      a{
+        width: 100%;
+        div{
+          width: 100%;
+        }
+      }
+      width: 100%;
     }
 }
 

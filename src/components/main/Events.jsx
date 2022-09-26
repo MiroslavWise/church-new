@@ -6,8 +6,8 @@ import Calendar from 'react-calendar'
 import moment from 'moment';
 import 'moment/min/locales'
 
-const API_KEY = 'AIzaSyDktjq1a-FP0eQPcC2vXGbKs6SAiIg-qY0';
-const CALENDAR_ID = 'alsheuskivictor@gmail.com';
+const API_KEY = 'AIzaSyA9KU7W9VMgT-kc7i3PdKh5VwNL9D9kTeU';
+const CALENDAR_ID = 'church.stolin@gmail.com';
 const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
 
 

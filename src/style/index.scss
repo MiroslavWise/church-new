@@ -552,7 +552,10 @@ code {
   min-height: 100%;
   gap: 20px;
   @media (max-width:$mobile)  {
+    grid-template-columns: repeat(1, 1fr);
     width: calc(100%);
+    height: 100%;
+    background-size: cover;
   }
 }
 
@@ -576,10 +579,10 @@ code {
     pointer-events: none;
     padding: 10px 20px;
     @media (max-width: $mobile) {
-      letter-spacing: 0.7px !important;
+      letter-spacing: 2px !important;
+      font-size: 25px;
       padding: 0.6em;
-      border: solid 2px #db9327;
-      font-size: 0.8em;
+      font-weight: 300 !important;
     }
 }
 }

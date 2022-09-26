@@ -14,8 +14,8 @@
 
 $color-prime: var(--color-prime);
 $color-secondary: var(--color-secondary);
-$color-yellow: var(--color-yellow);
-$color-w-g: var(--color-white);
+$color-yellow: #db9327;
+$color-w-g: #fdfdfd;
 $max-1507: 1507px;
 $color-prime-two: var(--color-prime-two);
 // $mobile: var(--mobile-breakpoint);
@@ -243,7 +243,7 @@ code {
   left: 0;
   z-index: 999;
   transition: all 0.3s ease-in-out ;
-  border-bottom: 1px solid rgba($color-w-g, 0.2);
+  border-bottom: 1px solid rgba(var(--color-white), 0.2);
   position:fixed;
   @include d-flex-center();
   flex-direction: row;

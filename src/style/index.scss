@@ -18,7 +18,9 @@ $color-yellow: var(--color-yellow);
 $color-w-g: var(--color-white);
 $max-1507: 1507px;
 $color-prime-two: var(--color-prime-two);
-$mobile: var(--mobile-breakpoint);
+// $mobile: var(--mobile-breakpoint);
+
+$mobile: 576px;
 
 *{
   scroll-padding-top: 59px !important;
@@ -413,7 +415,7 @@ code {
 }
 
 .block {
-  max-width: 92%;
+  // max-width: 92%;
 }
 
 .block-content {
@@ -432,9 +434,9 @@ code {
 }
 
 .b-d-f-c{
-  @include d-flex-center();
-  background-size: cover;
-  background-position: center;
+  // @include d-flex-center();
+  // background-size: cover;
+  // background-position: center;
 }
 
 .about-block {

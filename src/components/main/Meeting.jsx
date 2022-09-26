@@ -25,8 +25,6 @@ const Meeting = () => {
                                         />
                                         <div className="meeting-flex">
                                                 <div class="sunday-service c-p" onClick={(e) => { onChange(); e.stopPropagation() }}
-                                                        // data-aos="fade-up"
-                                                        // data-aos-duration="400"
                                                 >
                                                         <div className="centered">Воскресные собрания</div>
                                                 </div>

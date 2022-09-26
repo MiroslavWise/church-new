@@ -64,7 +64,10 @@ const VideosYouTube = () => {
         //                 .catch(e => console.info('e: ', e))
         // }, [])
         return(
-                <div className='youtube-grid' data-aos="fade-up" data-aos-duration="600">
+                <div className='youtube-grid'
+                        // data-aos="fade-up"
+                        // data-aos-duration="600"
+                >
                         <div className={`you-0`}>
                                 <iframe 
                                         style={{

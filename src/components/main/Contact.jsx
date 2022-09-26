@@ -14,10 +14,10 @@ const Contact = () => {
                                                 contacts.map(({text, logo, link})=> (
                                                         <div 
                                                                 className={`contact-item c-p`} 
-                                                                data-aos="zoom-in" 
+                                                                // data-aos="zoom-in" 
                                                                 key={text} 
-                                                                data-aos-offset="140"
-                                                                data-aos-duration="650" 
+                                                                // data-aos-offset="140"
+                                                                // data-aos-duration="650" 
                                                         >
                                                                 <img src={logo} alt="logos" className="contact-item-logo" />
                                                                 <div className="contact-item-text"> {text}</div>

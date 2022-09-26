@@ -15,7 +15,10 @@ const Stream = () => {
                                         />
                                         <div className="stream-flex">
                                                 <VideosYouTube />
-                                                <div className='you-description' data-aos="fade-up" data-aos-duration="600">
+                                                <div className='you-description'
+                                                        // data-aos="fade-up"
+                                                        // data-aos-duration="600"
+                                                >
                                                         <div>
                                                                 <p>
                                                                 На наших служениях мы стараемся преподавать Слово Божье таким образом, чтобы то, что мы проповедуем, созидало, ободряло, 

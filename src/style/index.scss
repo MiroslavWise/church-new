@@ -225,12 +225,18 @@ code {
 .bg-c-prime{
   background-color: $color-prime;
   height: 59px;
+  @media (max-width: $mobile) {
+    height: 70px;
+  }
 }
 
 .bg-c-transparent{
   background-color: transparent;
   height: 99px;
-  
+  @media (max-width: $mobile) {
+    height: 90px;
+    background-color: $color-prime;
+  }
 }
 
 .bg-c-second{
@@ -805,8 +811,8 @@ label {
     top: 18px;
     left: -16px;
     position: absolute;
-    width: 18px;
-    height: 4px;
+    width: 22px;
+    height: 3px;
     background: $color-yellow;
     transition: all 0.4s ease-in-out;
   }
@@ -827,7 +833,7 @@ section {
     #toggle#{$i}:checked ~ #content#{$i}{
       margin-bottom: 2rem;
       margin-top: 0.3rem;
-      margin-left: 1.1rem;
+      margin-left: 1.2rem;
       max-height: 6em;
       color: rgba(255,255,255,0.9);
     }

@@ -6,8 +6,8 @@ import YouTubeLarge from 'assets/svg/YouTube_Logo_Large.jsx'
 const Stream = () => {
 
         return(
-                <div className="w-100 stream b-d-f-c" id='main-video_stream'>
-                        <div className="block w-100">
+                <div className="w-100 stream" id='main-video_stream'>
+                        <div className="w-100">
                                 <div className="block-content">
                                         <Title 
                                                 name={'video_stream'}

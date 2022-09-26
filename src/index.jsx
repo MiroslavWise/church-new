@@ -1,11 +1,11 @@
 import React, { useState, useLayoutEffect } from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import AOS from 'aos'
+// import AOS from 'aos'
 import smoothscroll from 'smoothscroll-polyfill';
 
 import './style/index.scss';
-import 'aos/dist/aos.css'
+// import 'aos/dist/aos.css'
 import 'shared/translation/i18n'
 
 import { Header, Footer } from 'components'
@@ -23,12 +23,12 @@ let BehaviorLinks;
 const ModalContext = React.createContext('Function')
 
 const Routing = () => {
-    AOS.init({
-        offset: 30,
-        delay: 50,
-        duration: 300,
-        easing: 'ease-in-out',
-    })
+    // AOS.init({
+    //     offset: 30,
+    //     delay: 50,
+    //     duration: 300,
+    //     easing: 'ease-in-out',
+    // })
 
     useLayoutEffect(() => {
         BehaviorLinks = links.map(({ link }) => (

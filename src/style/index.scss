@@ -343,6 +343,9 @@ code {
   width: 100vw;
   background-color: $color-secondary;
   @include d-flex-center();
+  @media (max-width: $mobile) {
+    height: 90px;
+  }
   .footer-inner{
     width: 1160px;
     height: inherit;

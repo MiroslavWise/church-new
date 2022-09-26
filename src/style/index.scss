@@ -414,9 +414,6 @@ code {
   }
 }
 
-.block {
-  // max-width: 92%;
-}
 
 .block-content {
   max-width: 1160px;
@@ -434,9 +431,9 @@ code {
 }
 
 .b-d-f-c{
-  // @include d-flex-center();
-  // background-size: cover;
-  // background-position: center;
+  @include d-flex-center();
+  background-size: cover;
+  background-position: center;
 }
 
 .about-block {

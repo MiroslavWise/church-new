@@ -15,10 +15,10 @@ const Meeting = () => {
 
         return(
                 <div
-                        className="w-100 meeting b-d-f-c"
+                        className="w-100 meeting"
                         id="main-meeting"
                 >
-                        <div className="block w-100">
+                        <div className="w-100">
                                 <div className="block-content">
                                         <Title 
                                                 name={'meetings'}

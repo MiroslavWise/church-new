@@ -11,7 +11,7 @@ const Greeting = () => {
         return(
                 <div className={`about_container not_visible ${visibility && "visible"}`}>
                         <div className = "bg_greeting_page_title greeting_image">
-                                <h1 className="h1-about">Больше, чем церковь</h1>
+                                <h1 className="h1-about">Самое важное</h1>
                         </div>
                         <div className="block-content greeting_description">
                                 <p><Pp10/>

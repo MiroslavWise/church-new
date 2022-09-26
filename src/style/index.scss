@@ -1110,6 +1110,7 @@ section {
     gap: 10px;
   }
   @media (max-width: $mobile){
+    grid-template-rows: repeat(2, 40%);
   }
 }
 
@@ -1138,13 +1139,7 @@ section {
       width: 50%;
     }
     @media (max-width: $mobile){
-      a{
-        width: 100%;
-        div{
-          width: 100%;
-        }
-      }
-      width: 100%;
+      width: 15rem;
     }
 }
 
@@ -1169,6 +1164,16 @@ section {
       font-size: 16px !important;
       color: $color-w-g;
     }
+  }
+  @media (max-width: $mobile){
+    display: flex;
+    flex-direction: column;
+  }
+}
+._small_bottom{
+  @media (max-width: $mobile){
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 
@@ -1460,7 +1465,10 @@ section {
   justify-content: center;
   line-height: 40px;
   gap: 3px;
-  
+  @media (max-width: $mobile) {
+    line-height: 30px;
+    gap: 2px;
+  }
 }
 .item_button_answers{
   cursor: pointer;
@@ -1468,6 +1476,10 @@ section {
   border-radius: 30px;
   transition: all 0.25s ease-in-out;
   align-items: center;
+  &::shadow{
+    background-color: red;
+    border-radius: 30px;
+  }
   &:hover{
     color: #d14f42;
   }
@@ -1476,6 +1488,14 @@ section {
     font-size: 22px;
     font-style: normal;
     text-transform: uppercase;
+  }
+  @media (max-width: $mobile) {
+    span{
+      font-weight:400;
+      font-size: 18px;
+      font-style: normal;
+      // text-transform: uppercase;
+    }
   }
 }
 .active{
@@ -1491,19 +1511,24 @@ section {
   width: 100%;
   display: inline-flex;
   justify-content: center;
-  // scale: 0.4;
   transition: all 1s ease-in-out;
   span{
     font-size: 22px;
     text-align: center;
   }
+  @media (max-width: $mobile) {
+    span{
+      font-size: 17px;
+      text-align: center;
+    }
+  }
 }
-// .description_text_active{
-//   scale: 1;
-// }
 
 #faith_item_title{
   max-width: 95%; 
   font-size: 22px !important;
   color:#fdfdfd;
+  @media (max-width: $mobile) {
+    font-size: 17px !important;
+  }
 }

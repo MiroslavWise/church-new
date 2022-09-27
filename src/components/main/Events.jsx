@@ -141,7 +141,7 @@ const getCurrentDateState = (changedDate, isSelected) => {
         return {
                 prevMonthName: `  ${moment(changedDate).subtract(1, "month").format('MMMM')}`,
                 nextMonthName: `${moment(changedDate).subtract(-1, "month").format('MMMM')}  `,
-                selectedDate: isSelected ? changedDate : getNDayOfMonth(changedDate.getFullYear(),changedDate.getMonth(),15)
+                selectedDate: isSelected ? changedDate : getNDayOfMonth(changedDate.getFullYear(),changedDate.getMonth(), moment().format("DD"))
         }
 }
 

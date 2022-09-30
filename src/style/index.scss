@@ -309,6 +309,9 @@ code {
   @include d-flex-center();
   @media (max-width: $mobile) {
     margin-right: 15px;
+    > a {
+      padding: 3px;
+    }
   }
 }
 
@@ -1543,5 +1546,79 @@ section {
   color:#fdfdfd;
   @media (max-width: $mobile) {
     font-size: 17px !important;
+  }
+}
+
+#arrowAnim {
+  width: 20vw;
+  height: 20vh;
+  position: fixed;
+  left: 80%;
+  bottom: -7%;
+  z-index: 100;
+}
+
+.arrow {
+  width: 3.0vw;
+  height: 3.0vw;
+  border: 2.5vw solid;
+  border-color: white transparent transparent white;
+  transform: rotate(-135deg);
+  position: absolute;
+}
+
+.arrowSliding {
+  position: absolute;
+  -webkit-animation: slide 4s linear infinite; 
+          animation: slide 4s linear infinite;
+}
+
+.delay1 {
+  -webkit-animation-delay: 1s; 
+    animation-delay: 1s;
+}
+.delay2 {
+  -webkit-animation-delay: 2s; 
+    animation-delay: 2s;
+}
+.delay3 {
+  -webkit-animation-delay: 3s; 
+    animation-delay: 3s;
+}
+
+@-webkit-keyframes slide {
+    0% { opacity:0; transform: translateY(-15vw); }	
+   25% { opacity:0.55; transform: translateY(-9vw); }
+   50% { opacity: 0.7; transform: translateY(0vw); }		
+   75% { opacity:0.55; transform: translateY(9vw); }	
+  100% { opacity:0; transform: translateY(15vw); }	
+}
+@keyframes slide {
+  0% { opacity:0; transform: translateY(-15vw); }	
+  25% { opacity:0.55; transform: translateY(-9vw); }
+  50% { opacity: 0.7; transform: translateY(0vw); }		
+  75% { opacity:0.55; transform: translateY(9vw); }	
+ 100% { opacity:0; transform: translateY(15vw); }	
+}
+
+.show-array{
+  opacity: 0;
+  transition: 2s;
+  animation: show 5s 1;
+  // animation-fill-mode: forwards; 
+  animation-delay: 1.8s;
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  20%{
+    opacity: 1;
+  }
+  80%{
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

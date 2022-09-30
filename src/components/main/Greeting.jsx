@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
 import { ButtonMore } from 'components'
+import { Arrow } from 'components'
+import { isMobile } from 'react-device-detect';
 
 const Greeting = () => {
         const [loaded, setScale] = useState(false);
@@ -21,6 +23,7 @@ const Greeting = () => {
                                         />
                                 </div>
                         </div>
+                        { isMobile && <Arrow/> }
                 </div>
         )
 }

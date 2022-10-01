@@ -1,6 +1,26 @@
+import { useState, useEffect } from 'react'
+
 const Arrow = () => {
+    
+    const [scrolled, setScrolled] = useState(false);
+
+    let count = 0;
+    const handleScroll = () => {
+        if (count > 2) {
+            setScrolled(true);
+            window.removeEventListener("scroll", handleScroll);
+        }
+        count++;
+    }
+
+    useEffect(()=>{
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+      }, []) 
+
     return(
-        <div id="arrowAnim" className={`show-array`}>
+        <>
+        <div id="arrowAnim" className={`show-array ${scrolled && 'hide_arrow'}`}>
             <div className="arrowSliding">
                 <div className="arrow"></div>
             </div>
@@ -13,7 +33,10 @@ const Arrow = () => {
             <div className="arrowSliding delay3">
                 <div className="arrow"></div>
             </div>
+            
         </div>
+
+        </>
     )
 }
 

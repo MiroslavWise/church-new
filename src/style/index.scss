@@ -1559,9 +1559,9 @@ section {
 }
 
 .arrow {
-  width: 3.0vw;
-  height: 3.0vw;
-  border: 2.5vw solid;
+  width: 1.2em;
+  height: 1.2em;
+  border: 0.7em solid;
   border-color: white transparent transparent white;
   transform: rotate(-135deg);
   position: absolute;
@@ -1588,25 +1588,24 @@ section {
 
 @-webkit-keyframes slide {
     0% { opacity:0; transform: translateY(-15vw); }	
-   25% { opacity:0.55; transform: translateY(-9vw); }
+   25% { opacity:0.6; transform: translateY(-9vw); }
    50% { opacity: 0.7; transform: translateY(0vw); }		
-   75% { opacity:0.55; transform: translateY(9vw); }	
+   75% { opacity:0.6; transform: translateY(9vw); }	
   100% { opacity:0; transform: translateY(15vw); }	
 }
 @keyframes slide {
   0% { opacity:0; transform: translateY(-15vw); }	
-  25% { opacity:0.55; transform: translateY(-9vw); }
+  25% { opacity:0.6; transform: translateY(-9vw); }
   50% { opacity: 0.7; transform: translateY(0vw); }		
-  75% { opacity:0.55; transform: translateY(9vw); }	
+  75% { opacity:0.6; transform: translateY(9vw); }	
  100% { opacity:0; transform: translateY(15vw); }	
 }
 
 .show-array{
   opacity: 0;
   transition: 2s;
-  animation: show 5s 1;
-  // animation-fill-mode: forwards; 
-  animation-delay: 1.8s;
+  animation: show 7s 1;
+  animation-delay: 1.2s;
 }
 @keyframes show {
   from {
@@ -1621,4 +1620,10 @@ section {
   to {
     opacity: 0;
   }
+}
+
+.hide_arrow{
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
 }

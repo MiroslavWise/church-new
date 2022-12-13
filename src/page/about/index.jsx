@@ -26,10 +26,10 @@ const About = () => {
                         <div className='bg_about_page_title about_main_image'>
                                 <h1 className="h1-about _h1">О нас</h1>
                         </div>
-                        <AboutLinks />
+                        {/* <AboutLinks /> */}
                         <SmallInfo />
                         <Pastors />
-                        <Faith />
+                        {/* <Faith /> */}
                 </div>
         )
 }

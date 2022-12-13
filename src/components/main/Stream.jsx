@@ -16,8 +16,6 @@ const Stream = () => {
                                         <div className="stream-flex">
                                                 <VideosYouTube />
                                                 <div className='you-description'
-                                                        // data-aos="fade-up"
-                                                        // data-aos-duration="600"
                                                 >
                                                         <div>
                                                                 <p>

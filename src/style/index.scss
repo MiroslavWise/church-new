@@ -309,6 +309,9 @@ code {
   @include d-flex-center();
   @media (max-width: $mobile) {
     margin-right: 15px;
+    > a {
+      padding: 3px;
+    }
   }
 }
 
@@ -1544,4 +1547,83 @@ section {
   @media (max-width: $mobile) {
     font-size: 17px !important;
   }
+}
+
+#arrowAnim {
+  width: 20vw;
+  height: 20vh;
+  position: fixed;
+  left: 80%;
+  bottom: -7%;
+  z-index: 100;
+}
+
+.arrow {
+  width: 1.2em;
+  height: 1.2em;
+  border: 0.7em solid;
+  border-color: white transparent transparent white;
+  transform: rotate(-135deg);
+  position: absolute;
+}
+
+.arrowSliding {
+  position: absolute;
+  -webkit-animation: slide 4s linear infinite; 
+          animation: slide 4s linear infinite;
+}
+
+.delay1 {
+  -webkit-animation-delay: 1s; 
+    animation-delay: 1s;
+}
+.delay2 {
+  -webkit-animation-delay: 2s; 
+    animation-delay: 2s;
+}
+.delay3 {
+  -webkit-animation-delay: 3s; 
+    animation-delay: 3s;
+}
+
+@-webkit-keyframes slide {
+    0% { opacity:0; transform: translateY(-15vw); }	
+   25% { opacity:0.6; transform: translateY(-9vw); }
+   50% { opacity: 0.7; transform: translateY(0vw); }		
+   75% { opacity:0.6; transform: translateY(9vw); }	
+  100% { opacity:0; transform: translateY(15vw); }	
+}
+@keyframes slide {
+  0% { opacity:0; transform: translateY(-15vw); }	
+  25% { opacity:0.6; transform: translateY(-9vw); }
+  50% { opacity: 0.7; transform: translateY(0vw); }		
+  75% { opacity:0.6; transform: translateY(9vw); }	
+ 100% { opacity:0; transform: translateY(15vw); }	
+}
+
+.show-array{
+  opacity: 0;
+  transition: 2s;
+  animation: show 7s 1;
+  animation-delay: 1.2s;
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  20%{
+    opacity: 1;
+  }
+  80%{
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.hide_arrow{
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
 }

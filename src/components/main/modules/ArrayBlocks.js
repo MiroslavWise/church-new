@@ -69,7 +69,7 @@ const contacts = [
                 logo: phone,
         },
         {
-                text: 'slovostolin@yandex.by', 
+                text: 'church.stolin@gmail.com', 
                 logo: email,
         },
         {

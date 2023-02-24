@@ -5,8 +5,8 @@ import { useState, useCallback, useEffect } from 'react'
 
 const coordinates = [51.891994, 26.859789];
 const mapState = {
-  center: coordinates,
-  zoom: 17
+        center: coordinates,
+        zoom: 17
 };
 
 
